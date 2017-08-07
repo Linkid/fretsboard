@@ -1,0 +1,10 @@
+language: python
+python:
+    - 3.6
+
+install:
+    - pip install tox
+
+script:
+    - tox -e py36
+    - tox -e flake8

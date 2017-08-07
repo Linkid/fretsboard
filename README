@@ -1,6 +1,8 @@
 Fretsboard
 ==========
 
+[![Build Status](https://travis-ci.org/Linkid/fretsboard.svg?branch=master)](https://travis-ci.org/Linkid/fretsboard)
+
 Fretsboard is a web scoreboard for the rythm game Frets On Fire.
 
 Instance (old): http://www.prison.net/worldcharts/charts/
@@ -14,7 +16,7 @@ On a virtualenv:
 ```bash
 git clone git@github.com:Linkid/fretsboard.git
 cd fretsboard
-pip install -U -r requirements.txt
+pip install -r requirements.txt
 ./manage.py migrate
 ./manage.py runserver
 ```

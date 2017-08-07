@@ -3,7 +3,7 @@ Fretsboard
 
 [![Build Status](https://travis-ci.org/Linkid/fretsboard.svg?branch=master)](https://travis-ci.org/Linkid/fretsboard)
 
-Fretsboard is a web scoreboard for the rythm game Frets On Fire.
+Fretsboard is a web scoreboard for the rhythm game Frets On Fire.
 
 Instance (old): http://www.prison.net/worldcharts/charts/
 

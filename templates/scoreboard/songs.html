@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block title %}Songs{% endblock %}
+{% block header %}<h1>Songs</h1>{% endblock %}
+
+
+{% block content %}
+<ul class="list-group">
+  {% for song in songs|dictsort:"title" %}
+  <li class="list-group-item">
+    <a href="{% url "song" song.slug %}"><strong>{{ song.title }}</strong> by {{ song.artist }}</a>
+  </li>
+  {% empty %}
+  <li>No songs yet.</li>
+  {% endfor %}
+</ul>
+
+{% include "scoreboard/pagination.html" %}
+{% endblock %}

@@ -15,3 +15,10 @@ class Song(models.Model):
 
     def __str__(self, *args, **kwargs):
         return self.slug
+
+
+class Player(models.Model):
+    name = models.CharField(verbose_name=_("Name"), max_length=100)
+
+    def __str__(self, *args, **kwargs):
+        return self.name

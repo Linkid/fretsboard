@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block title %}Players{% endblock %}
+{% block header %}<h1>Players</h1>{% endblock %}
+
+
+{% block content %}
+<ul class="list-group">
+  {% for player in players %}
+  <li class="list-group-item">
+    <a href="{% url "player" player.name %}">{{ player.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% include "scoreboard/pagination.html" %}
+{% endblock %}

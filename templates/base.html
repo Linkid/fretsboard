@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load bootstrap3 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {% bootstrap_css %}
     {% block css %}{% endblock %}
+
+    {% bootstrap_javascript jquery=1 %}
     {% block js %}{% endblock %}
 
     <title>{% block title %}{% endblock %}</title>

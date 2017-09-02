@@ -9,7 +9,7 @@
 <ul class="list-group">
   {% for player in players %}
   <li class="list-group-item">
-    <a href="{% url "player" player.name %}">{{ player.name }}</a>
+    <a href="{% url "player" player.name %}"><strong>{{ player.name }}</strong></a>
   </li>
   {% endfor %}
 </ul>

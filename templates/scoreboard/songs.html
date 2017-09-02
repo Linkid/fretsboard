@@ -9,7 +9,7 @@
 <ul class="list-group">
   {% for song in songs|dictsort:"title" %}
   <li class="list-group-item">
-    <a href="{% url "song" song.slug %}"><strong>{{ song.title }}</strong> by {{ song.artist }}</a>
+    <a href="{% url 'song' song.slug %}"><strong>{{ song.title }}</strong> by {{ song.artist }}</a>
   </li>
   {% empty %}
   <li>No songs yet.</li>

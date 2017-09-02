@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}{{ song.title }} by {{ song.artist }}{% endblock %}
+{% block header %}<h1><em>{{ song.title }}</em> (by <em>{{ song.artist }}</em>)</h1>{% endblock %}
+
+
+{% block content %}
+<p>This song has been played {{ song.score_set.count }} time{{ song.score_set.count|pluralize }}.</p>
+
+{% regroup song.score_set.all|dictsort:"difficulty" by difficulty as difficulties_scores %}
+
+{% for difficulty, scores in difficulties_scores %}
+<h2>{{ difficulty }}</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Player</th>
+      <th>Score</th>
+      <th>Stars</th>
+    </tr>
+  <thead>
+
+  <tbody>
+  {% for score in scores|dictsortreversed:"score"|slice:":10" %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ score.player.name }}</td>
+    <td>
+      {% if forloop.counter == 1 %}
+      <img src="{% static 'img/gold.png' %}" alt="Gold" />
+      {% elif forloop.counter == 2 %}
+      <img src="{% static 'img/silver.png' %}" alt="Silver" />
+      {% elif forloop.counter == 3 %}
+      <img src="{% static 'img/bronze.png' %}" alt="Bronze" />
+      {% endif %}
+      {{ score.score }}
+    </td>
+    <td>{{ score.stars }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+{% endblock %}

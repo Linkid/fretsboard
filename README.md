@@ -8,6 +8,12 @@ Fretsboard is a web scoreboard for the rhythm game Frets On Fire.
 Instance (old): http://www.prison.net/worldcharts/charts/
 
 
+Status
+======
+
+This project is **still** in development.
+
+
 How to run
 ==========
 

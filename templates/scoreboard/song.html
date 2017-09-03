@@ -27,7 +27,7 @@
   {% for score in scores|dictsortreversed:"score"|slice:":10" %}
   <tr>
     <td>{{ forloop.counter }}</td>
-    <td>{{ score.player.name }}</td>
+    <td><a href="{% url "player" score.player.name %}">{{ score.player.name }}</a></td>
     <td>
       {% if forloop.counter == 1 %}
       <img src="{% static 'img/gold.png' %}" alt="Gold" />

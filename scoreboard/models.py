@@ -23,6 +23,46 @@ class Player(models.Model):
     def __str__(self, *args, **kwargs):
         return self.name
 
+    def get_total_score(self):
+        """Sum all scores for the player"""
+        scores = self.score_set.all()
+        return sum(i.score for i in scores)
+
+    def get_medals(self):
+        """Get number of each medal"""
+        gold_medals = 0
+        silver_medals = 0
+        bronze_medals = 0
+
+        # get all scores for the player
+        my_scores = self.score_set.all()
+        for my_score in my_scores:
+            # get all scores for the song and difficulty
+            all_scores = Score.objects.filter(song=my_score.song, difficulty=my_score.difficulty)
+            # get best scores
+            medals = all_scores.order_by('-score')
+
+            if medals and medals[0].player == self:
+                gold_medals += 1
+            if medals.count() >= 2 and medals[1].player == self:
+                silver_medals += 1
+            if medals.count() >= 3 and medals[2].player == self:
+                bronze_medals += 1
+
+        return (gold_medals, silver_medals, bronze_medals)
+
+    def get_gold_medals(self):
+        """Get number of gold medals"""
+        return self.get_medals()[0]
+
+    def get_silver_medals(self):
+        """Get number of silver medals"""
+        return self.get_medals()[1]
+
+    def get_bronze_medals(self):
+        """Get number of bronze medals"""
+        return self.get_medals()[2]
+
 
 class Score(models.Model):
     DIFFICULTIES = (

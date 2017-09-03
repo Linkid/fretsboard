@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Player {{ player.name }}{% endblock %}
+{% block header %}<h1>{{ player.name }}</h1>{% endblock %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title"><strong>Total score</strong></div>
+      </div>
+      <div class="panel-body">
+        {{ player.get_total_score }}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title"><strong>Played games</strong></div>
+      </div>
+      <div class="panel-body">
+        {{ player.score_set.count }}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title"><strong>Earned medals</strong></div>
+      </div>
+      <div class="panel-body">
+        <ul class="list-inline">
+          <li><img src="{% static 'img/gold.png' %}" alt="Gold" /> {{ player.get_gold_medals }}</li>
+          <li><img src="{% static 'img/silver.png' %}" alt="Silver" /> {{ player.get_silver_medals }}</li>
+          <li><img src="{% static 'img/bronze.png' %}" alt="Bronze" /> {{ player.get_bronze_medals }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>Played songs</h2>
+<div class="panel-group">
+  <div class="panel panel-default">
+
+    {% for song, difficulties in positions.items %}
+    <!-- Song title -->
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <a data-toggle="collapse" href="#{{ song.slug }}">
+          <button class="btn btn-default">
+            <span class="glyphicon glyphicon-list"></span>
+          </button>
+          {{ song.title }}
+        </a>
+        <a class="btn btn-default pull-right" href="{% url 'song' song.slug %}">
+          <span class="glyphicon glyphicon-cd"></span>
+        </a>
+      </h3>
+    </div> <!-- panel-heading -->
+
+    <!-- Difficulties / scores -->
+    <div id="{{ song.slug }}" class="panel-collapse collapse">
+
+      <ul class="list-group">
+      {% for difficulty, scores in difficulties.items %}
+      <!-- Difficulty -->
+        <li class="list-group-item"><h4>{{ difficulty }}</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Score</th>
+                <th>Date</th>
+                <th>Stars</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Scores -->
+              {% for score, position in scores.items %}
+              <tr>
+                <td>{{ position }}</td>
+                <td>
+                  {% if position == 1 %}
+                  <img src="{% static 'img/gold.png' %}" alt="Gold" />
+                  {% elif position == 2 %}
+                  <img src="{% static 'img/silver.png' %}" alt="Silver" />
+                  {% elif position == 3 %}
+                  <img src="{% static 'img/bronze.png' %}" alt="Bronze" />
+                  {% endif %}
+                  {{ score.score }}
+                </td>
+                <td>{{ score.date|date:"SHORT_DATETIME_FORMAT" }}</td>
+                <td>{{ score.stars }}</td>
+              </tr>
+              {% endfor %}  <!-- scores -->
+
+            </tbody>
+          </table>
+        </li>
+      {% endfor %}  <!-- difficulties -->
+      </ul>
+
+    </div> <!-- panel-collapse -->
+    {% endfor %}  <!-- songs -->
+
+  </div> <!-- panel-default -->
+</div> <!-- panel-group -->
+{% endblock %}

@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^songs/(?P<song_id>.+)/$', views.song, name='song'),
     # players
     url(r'^players/$', views.Players.as_view(), name='players'),
+    url(r'^players/(?P<player_name>.+)$', views.player, name='player'),
 ]

@@ -9,6 +9,9 @@ class Song(models.Model):
     artist = models.CharField(verbose_name=_("Artist"), max_length=100)
     year = models.IntegerField()
 
+    class Meta:
+        ordering = ['-slug']
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)

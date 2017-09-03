@@ -102,7 +102,15 @@
                   {{ score.score }}
                 </td>
                 <td>{{ score.date|date:"SHORT_DATETIME_FORMAT" }}</td>
-                <td>{{ score.stars }}</td>
+                <td>
+                  {% for star_state in score.stars_state %}
+                    {% if star_state %}
+                      <span class="glyphicon glyphicon-star"></span>
+                    {% else %}
+                      <span class="glyphicon glyphicon-star-empty"></span>
+                    {% endif %}
+                  {% endfor %}
+                </td>
               </tr>
               {% endfor %}  <!-- scores -->
 

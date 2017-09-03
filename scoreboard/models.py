@@ -70,6 +70,7 @@ class Score(models.Model):
         ("medium", _("Medium")),
         ("amazing", _("Amazing")),
     )
+    MAX_STARS = 5
 
     song = models.ForeignKey(Song)
     player = models.ForeignKey(Player)
@@ -88,3 +89,7 @@ class Score(models.Model):
             'date': self.date,
         }
         return msg % dico
+
+    def stars_state(self):
+        """Return a list of boolean representing the state of stars"""
+        return [True] * self.stars + [False] * (self.MAX_STARS - self.stars)

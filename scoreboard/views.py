@@ -8,6 +8,9 @@ from scoreboard.models import Song
 
 
 class Songs(generic.ListView):
+    """
+    List all songs
+    """
     model = Song
     context_object_name = 'songs'
     template_name = 'scoreboard/songs.html'
@@ -23,6 +26,9 @@ def song(request, song_id):
 
 
 class Players(generic.ListView):
+    """
+    List all players
+    """
     model = Player
     context_object_name = 'players'
     template_name = 'scoreboard/players.html'

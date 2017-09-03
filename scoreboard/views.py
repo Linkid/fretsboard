@@ -59,3 +59,20 @@ def player(request, player_name):
             positions[song][difficulty_val] = player_positions  # contains { score: position }
 
     return render(request, 'scoreboard/player.html', { 'player': player, 'positions': positions })
+
+
+def scoreboard(request):
+    """
+    Scoreboard summary
+    """
+    players = Player.objects.all()
+    scores = Score.objects.all()
+    songs = Song.objects.all()
+
+    context = {
+        'players': players,
+        'scores': scores,
+        'songs': songs,
+    }
+
+    return render(request, 'scoreboard/scoreboard.html', context)

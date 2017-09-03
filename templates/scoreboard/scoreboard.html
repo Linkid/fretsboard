@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Scoreboard{% endblock %}
+{% block header %}<h1>Scoreboard</h1>{% endblock %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title"><strong>Top songs</strong></span>
+      </div>
+      <div class="panel-body">
+        <ol>
+          {% for song in songs|dictsortreversed:"score_set.count"|slice:"20" %}
+          <li><a href="{% url 'song' song.slug %}">{{ song.title }}</a> ({{ song.score_set.count }} play{{ song.score_set.count|pluralize }})</li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title"><strong>Top players</strong></span>
+      </div>
+      <div class="panel-body">
+        <ol>
+          {% for player in players|dictsortreversed:"get_total_score"|slice:"20" %}
+          <li><a href="{% url 'player' player.name %}">{{ player.name }}</a> ({{ player.get_total_score }} point{{ player.get_total_score|pluralize }})</li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title"><strong>Top medals</strong></span>
+      </div>
+      <div class="panel-body">
+        <ol>
+          {% for player in players|dictsortreversed:"get_medals"|slice:"20" %}
+          <li>
+            <ul class="list-inline">
+              <li><a href="{% url 'player' player.name %}">{{ player.name }}</a></li>
+              <li><img src="{% static 'img/gold.png' %}" alt="Gold" /> {{ player.get_gold_medals }}</li>
+              <li><img src="{% static 'img/silver.png' %}" alt="Silver" /> {{ player.get_silver_medals }}</li>
+              <li><img src="{% static 'img/bronze.png' %}" alt="Bronze" /> {{ player.get_bronze_medals }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title"><strong>Statistics</strong></span>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li>{{ scores.count }} game{{ scores.count|pluralize }} player</li>
+          <li>{{ players.count }} player{{ players.count|pluralize }}</li>
+          <li>{{ songs.count }} song{{ songs.count|pluralize }} available</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title"><strong>Recent performances</strong></span>
+      </div>
+      <div class="panel-body">
+        <ul>
+          {% for score in scores|dictsort:"date" %}
+          <li>
+            {{ score.score }} point{{ score.score|pluralize }}
+            on <a href="{% url 'song' score.song.slug %}">{{ score.song.title }}</a>
+            by <a href="{% url 'player' score.player.name %}">{{ score.player.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

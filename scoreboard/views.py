@@ -22,7 +22,7 @@ def song(request, song_id):
     Song scores
     """
     song = get_object_or_404(Song, slug=song_id)
-    return render(request, 'scoreboard/song.html', { 'song': song })
+    return render(request, 'scoreboard/song.html', {'song': song})
 
 
 class Players(generic.ListView):
@@ -64,7 +64,7 @@ def player(request, player_name):
             # save positions
             positions[song][difficulty_val] = player_positions  # contains { score: position }
 
-    return render(request, 'scoreboard/player.html', { 'player': player, 'positions': positions })
+    return render(request, 'scoreboard/player.html', {'player': player, 'positions': positions})
 
 
 def scoreboard(request):

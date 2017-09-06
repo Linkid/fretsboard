@@ -10,7 +10,7 @@ class Song(models.Model):
     year = models.IntegerField(verbose_name=_("Year"))
 
     class Meta:
-        ordering = ['-slug']
+        ordering = ['slug']
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

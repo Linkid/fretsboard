@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Scoreboard{% endblock %}
-{% block header %}<h1>Scoreboard</h1>{% endblock %}
+
+{% block title %}{% trans "Scoreboard" %}{% endblock %}
+{% block header %}<h1>{% trans "Scoreboard" %}</h1>{% endblock %}
 
 
 {% block content %}
@@ -10,12 +12,17 @@
   <div class="col-sm-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <span class="panel-title"><strong>Top songs</strong></span>
+        <span class="panel-title"><strong>{% trans "Top songs" %}</strong></span>
       </div>
       <div class="panel-body">
         <ol>
           {% for song in songs|dictsortreversed:"score_set.count"|slice:"20" %}
-          <li><a href="{% url 'song' song.slug %}">{{ song.title }}</a> ({{ song.score_set.count }} play{{ song.score_set.count|pluralize }})</li>
+          <li>
+            <a href="{% url 'song' song.slug %}">{{ song.title }}</a>
+            ({% blocktrans with score_count=song.score_set.count score_count_p=song.score_set.count|pluralize trimmed %}
+              {{ score_count }} play{{ song.score_set.count_p }}
+            {% endblocktrans %})
+          </li>
           {% endfor %}
         </ol>
       </div>
@@ -26,12 +33,17 @@
   <div class="col-sm-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <span class="panel-title"><strong>Top players</strong></span>
+        <span class="panel-title"><strong>{% trans "Top players" %}</strong></span>
       </div>
       <div class="panel-body">
         <ol>
           {% for player in players|dictsortreversed:"get_total_score"|slice:"20" %}
-          <li><a href="{% url 'player' player.name %}">{{ player.name }}</a> ({{ player.get_total_score }} point{{ player.get_total_score|pluralize }})</li>
+          <li>
+            <a href="{% url 'player' player.name %}">{{ player.name }}</a>
+            ({% blocktrans with total_score=player.get_total_score total_score_p=player.get_total_score|pluralize trimmed %}
+              {{ total_score }} point{{ total_score_p }}
+            {% endblocktrans %})
+          </li>
           {% endfor %}
         </ol>
       </div>
@@ -42,7 +54,7 @@
   <div class="col-sm-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <span class="panel-title"><strong>Top medals</strong></span>
+        <span class="panel-title"><strong>{% trans "Top medals" %}</strong></span>
       </div>
       <div class="panel-body">
         <ol>
@@ -50,9 +62,9 @@
           <li>
             <ul class="list-inline">
               <li><a href="{% url 'player' player.name %}">{{ player.name }}</a></li>
-              <li><img src="{% static 'img/gold.png' %}" alt="Gold" /> {{ player.get_gold_medals }}</li>
-              <li><img src="{% static 'img/silver.png' %}" alt="Silver" /> {{ player.get_silver_medals }}</li>
-              <li><img src="{% static 'img/bronze.png' %}" alt="Bronze" /> {{ player.get_bronze_medals }}</li>
+              <li><img src="{% static 'img/gold.png' %}" alt="{% trans 'Gold' %}" /> {{ player.get_gold_medals }}</li>
+              <li><img src="{% static 'img/silver.png' %}" alt="{% trans 'Silver' %}" /> {{ player.get_silver_medals }}</li>
+              <li><img src="{% static 'img/bronze.png' %}" alt="{% trans 'Bronze' %}" /> {{ player.get_bronze_medals }}</li>
             </ul>
           </li>
           {% endfor %}
@@ -65,13 +77,25 @@
   <div class="col-sm-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <span class="panel-title"><strong>Statistics</strong></span>
+        <span class="panel-title"><strong>{% trans "Statistics" %}</strong></span>
       </div>
       <div class="panel-body">
         <ul>
-          <li>{{ scores.count }} game{{ scores.count|pluralize }} player</li>
-          <li>{{ players.count }} player{{ players.count|pluralize }}</li>
-          <li>{{ songs.count }} song{{ songs.count|pluralize }} available</li>
+          <li>
+            {% blocktrans with scores_count=scores.count scores_count_p=scores.count|pluralize %}
+              {{ scores_count }} game{{ scores_count_p }} played
+            {% endblocktrans %}
+          </li>
+          <li>
+            {% blocktrans with players_count=players.count players_count_p=players.count|pluralize %}
+              {{ players_count }} player{{ players_count_p }}
+            {% endblocktrans %}
+          </li>
+          <li>
+            {% blocktrans with songs_count=songs.count songs_count_p=songs.count|pluralize %}
+              {{ songs_count }} song{{ songs_count_p }} available
+            {% endblocktrans %}
+          </li>
         </ul>
       </div>
     </div>
@@ -79,15 +103,19 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <span class="panel-title"><strong>Recent performances</strong></span>
+        <span class="panel-title"><strong>{% trans "Recent performances" %}</strong></span>
       </div>
       <div class="panel-body">
         <ul>
           {% for score in scores|dictsort:"date" %}
           <li>
-            {{ score.score }} point{{ score.score|pluralize }}
-            on <a href="{% url 'song' score.song.slug %}">{{ score.song.title }}</a>
-            by <a href="{% url 'player' score.player.name %}">{{ score.player.name }}</a>
+            {% url 'song' score.song.slug as url_song %}
+            {% url 'player' score.player.name as url_player %}
+            {% blocktrans with score_score=score.score score_score_p=score.score|pluralize song_title=score.song.title player_name=score.player.name %}
+              {{ score_score }} point{{ score_score_p }}
+              on <a href="{{ url_song }}">{{ song_title }}</a>
+              by <a href="{{ url_player }}">{{ player_name }}</a>
+            {% endblocktrans %}
           </li>
           {% endfor %}
         </ul>

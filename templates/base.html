@@ -28,14 +28,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url "scoreboard" %}">FretsBoard</a>
+          <a class="navbar-brand" href="{% url "scoreboard" %}">Fretsboard</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li {% if request.resolver_match.url_name == 'scoreboard' %}class="active"{% endif %}><a href="{% url "scoreboard" %}">Scoreboard</a></li>
-            <li {% if 'player' in request.resolver_match.url_name %}class="active"{% endif %}><a href="{% url "players" %}">Players</a></li>
-            <li {% if 'song' in request.resolver_match.url_name %}class="active"{% endif %}><a href="{% url "songs" %}">Songs</a></li>
+            <li {% if request.resolver_match.url_name == 'scoreboard' %}class="active"{% endif %}><a href="{% url "scoreboard" %}">{% trans "Scoreboard" %}</a></li>
+            <li {% if 'player' in request.resolver_match.url_name %}class="active"{% endif %}><a href="{% url "players" %}">{% trans "Players" %}</a></li>
+            <li {% if 'song' in request.resolver_match.url_name %}class="active"{% endif %}><a href="{% url "songs" %}">{% trans "Songs" %}</a></li>
           </ul>
         </div>
       </div>

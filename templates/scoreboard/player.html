@@ -1,17 +1,22 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 
 
-{% block title %}Player {{ player.name }}{% endblock %}
+{% block title %}{% blocktrans with player_name=player.name %}Player {{ player_name }}{% endblocktrans %}{% endblock %}
 {% block header %}<h1>{{ player.name }}</h1>{% endblock %}
 
 
 {% block content %}
+{% trans "Gold" as str_gold %}
+{% trans "Silver" as str_silver %}
+{% trans "Bronze" as str_bronze %}
+
 <div class="row">
   <div class="col-sm-4">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <div class="panel-title"><strong>Total score</strong></div>
+        <div class="panel-title"><strong>{% trans "Total score" %}</strong></div>
       </div>
       <div class="panel-body">
         {{ player.get_total_score }}
@@ -23,7 +28,7 @@
   <div class="col-sm-4">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <div class="panel-title"><strong>Played games</strong></div>
+        <div class="panel-title"><strong>{% trans "Played games" %}</strong></div>
       </div>
       <div class="panel-body">
         {{ player.score_set.count }}
@@ -35,13 +40,13 @@
   <div class="col-sm-4">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <div class="panel-title"><strong>Earned medals</strong></div>
+        <div class="panel-title"><strong>{% trans "Earned medals" %}</strong></div>
       </div>
       <div class="panel-body">
         <ul class="list-inline">
-          <li><img src="{% static 'img/gold.png' %}" alt="Gold" /> {{ player.get_gold_medals }}</li>
-          <li><img src="{% static 'img/silver.png' %}" alt="Silver" /> {{ player.get_silver_medals }}</li>
-          <li><img src="{% static 'img/bronze.png' %}" alt="Bronze" /> {{ player.get_bronze_medals }}</li>
+          <li><img src="{% static 'img/gold.png' %}" alt="{{ str_gold }}" /> {{ player.get_gold_medals }}</li>
+          <li><img src="{% static 'img/silver.png' %}" alt="{{ str_silver }}" /> {{ player.get_silver_medals }}</li>
+          <li><img src="{% static 'img/bronze.png' %}" alt="{{ str_bronze }}" /> {{ player.get_bronze_medals }}</li>
         </ul>
       </div>
     </div>
@@ -49,7 +54,7 @@
 </div>
 
 
-<h2>Played songs</h2>
+<h2>{% trans "Played songs" %}</h2>
 <div class="panel-group">
   <div class="panel panel-default">
 
@@ -79,10 +84,10 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Position</th>
-                <th>Score</th>
-                <th>Date</th>
-                <th>Stars</th>
+                <th>{% trans "Position" %}</th>
+                <th>{% trans "Score" %}</th>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Stars" %}</th>
               </tr>
             </thead>
             <tbody>
@@ -93,11 +98,11 @@
                 <td>{{ position }}</td>
                 <td>
                   {% if position == 1 %}
-                  <img src="{% static 'img/gold.png' %}" alt="Gold" />
+                  <img src="{% static 'img/gold.png' %}" alt="{{ str_gold }}" />
                   {% elif position == 2 %}
-                  <img src="{% static 'img/silver.png' %}" alt="Silver" />
+                  <img src="{% static 'img/silver.png' %}" alt="{{ str_silver }} "/>
                   {% elif position == 3 %}
-                  <img src="{% static 'img/bronze.png' %}" alt="Bronze" />
+                  <img src="{% static 'img/bronze.png' %}" alt="{{ str_bronze }} "/>
                   {% endif %}
                   {{ score.score }}
                 </td>

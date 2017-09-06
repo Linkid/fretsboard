@@ -1,13 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 
-{% block title %}{{ song.title }} by {{ song.artist }}{% endblock %}
-{% block header %}<h1><em>{{ song.title }}</em> (by <em>{{ song.artist }}</em>)</h1>{% endblock %}
+{% block title %}
+  {% blocktrans with title=song.title artist=song.artist %}
+    {{ title }} by {{ artist }}
+  {% endblocktrans %}
+{% endblock %}
+
+{% block header %}
+  <h1>
+    {% blocktrans with title=song.title artist=song.artist %}
+      <em>{{ title }}</em> (by <em>{{ artist }}</em>)
+    {% endblocktrans %}
+  </h1>
+{% endblock %}
 
 
 {% block content %}
-<p>This song has been played {{ song.score_set.count }} time{{ song.score_set.count|pluralize }}.</p>
+<p>
+  {% blocktrans with score_count=song.score_set.count score_count_p=song.score_set.count|pluralize %}
+    This song has been played {{ score_count }} time{{ score_count_p }}.
+  {% endblocktrans %}
+</p>
 
 {% regroup song.score_set.all|dictsort:"difficulty" by difficulty as difficulties_scores %}
 
@@ -17,9 +33,9 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Player</th>
-      <th>Score</th>
-      <th>Stars</th>
+      <th>{% trans "Player" %}</th>
+      <th>{% trans "Score" %}</th>
+      <th>{% trans "Stars" %}</th>
     </tr>
   <thead>
 
@@ -30,11 +46,11 @@
     <td><a href="{% url "player" score.player.name %}">{{ score.player.name }}</a></td>
     <td>
       {% if forloop.counter == 1 %}
-      <img src="{% static 'img/gold.png' %}" alt="Gold" />
+        <img src="{% static 'img/gold.png' %}" alt="{% trans 'Gold' %}" />
       {% elif forloop.counter == 2 %}
-      <img src="{% static 'img/silver.png' %}" alt="Silver" />
+        <img src="{% static 'img/silver.png' %}" alt="{% trans 'Silver' %}" />
       {% elif forloop.counter == 3 %}
-      <img src="{% static 'img/bronze.png' %}" alt="Bronze" />
+        <img src="{% static 'img/bronze.png' %}" alt="{% trans 'Bronze' %}" />
       {% endif %}
       {{ score.score }}
     </td>

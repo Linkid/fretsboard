@@ -1,11 +1,15 @@
+{% load i18n %}
+{% trans "prev" as str_prev %}
+{% trans "next" as str_next %}
+
 <ul class="pagination">
   <li>
     {% if page_obj.has_previous %}
       <a href="?page={{ page_obj.previous_page_number }}">
-        prev
+        {{ str_prev }}
       </a>
     {% else %}
-      <span>prev</span>
+      <span>{{ str_prev }}</span>
     {% endif %}
   </li>
 
@@ -23,14 +27,13 @@
     {% endif %}
   {% endfor %}
 
-
   <li>
     {% if page_obj.has_next %}
       <a href="?page={{ page_obj.next_page_number }}">
-        next
+        {{ str_next }}
       </a>
     {% else %}
-      <span>next</span>
+      <span>{{ str_next }}</span>
     {% endif %}
   </li>
 </ul>

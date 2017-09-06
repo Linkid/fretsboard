@@ -12,6 +12,8 @@
   <li class="list-group-item">
     <a href="{% url "player" player.name %}"><strong>{{ player.name }}</strong></a>
   </li>
+  {% empty %}
+  <li class=list-group-item>{% trans "No player yet." %}</li>
   {% endfor %}
 </ul>
 

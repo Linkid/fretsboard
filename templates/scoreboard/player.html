@@ -126,6 +126,8 @@
       </ul>
 
     </div> <!-- panel-collapse -->
+    {% empty %}
+    <div class="panel-body">{% trans "No song yet." %}</div>
     {% endfor %}  <!-- songs -->
 
   </div> <!-- panel-default -->

@@ -23,6 +23,8 @@
               {{ score_count }} play{{ song.score_set.count_p }}
             {% endblocktrans %})
           </li>
+          {% empty %}
+          {% trans "No song yet." %}
           {% endfor %}
         </ol>
       </div>
@@ -44,6 +46,8 @@
               {{ total_score }} point{{ total_score_p }}
             {% endblocktrans %})
           </li>
+          {% empty %}
+          {% trans "No player yet." %}
           {% endfor %}
         </ol>
       </div>
@@ -67,6 +71,8 @@
               <li><img src="{% static 'img/bronze.png' %}" alt="{% trans 'Bronze' %}" /> {{ player.get_bronze_medals }}</li>
             </ul>
           </li>
+          {% empty %}
+          {% trans "No medal yet." %}
           {% endfor %}
         </ol>
       </div>
@@ -117,6 +123,8 @@
               by <a href="{{ url_player }}">{{ player_name }}</a>
             {% endblocktrans %}
           </li>
+          {% empty %}
+          {% trans "No performance yet" %}
           {% endfor %}
         </ul>
       </div>

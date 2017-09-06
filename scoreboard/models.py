@@ -7,7 +7,7 @@ class Song(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     title = models.CharField(verbose_name=_("Title"), max_length=100)
     artist = models.CharField(verbose_name=_("Artist"), max_length=100)
-    year = models.IntegerField()
+    year = models.IntegerField(verbose_name=_("Year"))
 
     class Meta:
         ordering = ['-slug']
@@ -75,12 +75,12 @@ class Score(models.Model):
     )
     MAX_STARS = 5
 
-    song = models.ForeignKey(Song)
-    player = models.ForeignKey(Player)
+    song = models.ForeignKey(Song, verbose_name=_("Song"))
+    player = models.ForeignKey(Player, verbose_name=_("Player"))
     difficulty = models.CharField(verbose_name=_("Difficulty"), choices=DIFFICULTIES, max_length=15)
-    score = models.IntegerField()
-    stars = models.IntegerField()
-    date = models.DateTimeField()
+    score = models.IntegerField(verbose_name=_("Score"))
+    stars = models.IntegerField(verbose_name=_("Stars"))
+    date = models.DateTimeField(verbose_name=_("Date"))
 
     def __str__(self, *args, **kwargs):
         msg = "%(song)s (%(difficulty)s): %(player)s - %(score)d (%(date)s)"

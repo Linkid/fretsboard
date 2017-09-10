@@ -8,3 +8,4 @@ install:
 script:
     - tox -e py36
     - tox -e flake8
+    - tox -e coverage

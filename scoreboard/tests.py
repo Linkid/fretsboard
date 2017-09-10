@@ -1,3 +1,4 @@
+from django.db import IntegrityError
 from django.test import TestCase
 from django.utils import timezone
 from django.utils.text import slugify
@@ -95,3 +96,75 @@ class PlayerTestCase(TestCase):
     def test_get_bronze_medals(self):
         bronze_medals = 1
         self.assertEqual(self.player2.get_bronze_medals(), bronze_medals)
+
+
+class ScoreTestCase(TestCase):
+    def setUp(self):
+        # players
+        self.player1 = Player.objects.create(name="Player1")
+        self.player2 = Player.objects.create(name="Player2")
+        # songs
+        self.song1 = Song.objects.create(title="Song1", artist="Artist1", year=2017)
+        self.song2 = Song.objects.create(title="Song2", artist="Artist2", year=2017)
+        # scores
+        self.score = Score.objects.create(
+            song=self.song1,
+            player=self.player1,
+            difficulty="easy",
+            score=100,
+            stars=1,
+            date=timezone.now()
+        )
+
+    def test_unicity_ok(self):
+        score_song = Score.objects.create(
+            song=self.song2,
+            player=self.player1,
+            difficulty="easy",
+            score=100,
+            stars=1,
+            date=timezone.now()
+        )
+        self.assertIn(score_song, Score.objects.all())
+
+        score_player = Score.objects.create(
+            song=self.song1,
+            player=self.player2,
+            difficulty="easy",
+            score=100,
+            stars=1,
+            date=timezone.now()
+        )
+        self.assertIn(score_player, Score.objects.all())
+
+        score_difficulty = Score.objects.create(
+            song=self.song1,
+            player=self.player1,
+            difficulty="medium",
+            score=100,
+            stars=1,
+            date=timezone.now()
+        )
+        self.assertIn(score_difficulty, Score.objects.all())
+
+    def test_unicity_ko(self):
+        with self.assertRaises(IntegrityError):
+            Score.objects.create(
+                song=self.song1,
+                player=self.player1,
+                difficulty="easy",
+                score=200,
+                stars=2,
+                date=timezone.now()
+            )
+
+    def test_display_score(self):
+        expected_str_score = "song1 (easy): Player1 - 100 (%s)" % self.score.date
+        self.assertEqual(str(self.score), expected_str_score)
+
+    def test_stars_state(self):
+        actual_stars_state = self.score.stars_state()
+        expected_stars_state = [True, False, False, False, False]
+
+        self.assertEqual(len(actual_stars_state), len(expected_stars_state))
+        self.assertListEqual(actual_stars_state, expected_stars_state)

@@ -82,6 +82,9 @@ class Score(models.Model):
     stars = models.IntegerField(verbose_name=_("Stars"))
     date = models.DateTimeField(verbose_name=_("Date"))
 
+    class Meta:
+        unique_together = ('song', 'player', 'difficulty')
+
     def __str__(self, *args, **kwargs):
         msg = "%(song)s (%(difficulty)s): %(player)s - %(score)d (%(date)s)"
         dico = {

@@ -1,0 +1,443 @@
+[
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "i-love-rock-n-roll",
+        "title": "I Love Rock 'n' Roll",
+        "artist": "Joan Jett",
+        "year": 1982
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "i-wanna-be-sedated",
+        "title": "I Wanna Be Sedated",
+        "artist": "The Ramones",
+        "year": 1978
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "thunder-kiss-65",
+        "title": "Thunder Kiss '65",
+        "artist": "White Zombie",
+        "year": 1992
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "smoke-on-the-water",
+        "title": "Smoke on the Water",
+        "artist": "Deep Purple",
+        "year": 1972
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "infected",
+        "title": "Infected",
+        "artist": "Bad Religion",
+        "year": 1994
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "iron-man",
+        "title": "Iron Man",
+        "artist": "Black Sabbath",
+        "year": 1970
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "more-than-a-feeling",
+        "title": "More Than a Feeling",
+        "artist": "Boston",
+        "year": 1976
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "youve-got-another-thing-comin",
+        "title": "You've Got Another Thing Comin'",
+        "artist": "Judas Priest",
+        "year": 1982
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "take-me-out",
+        "title": "Take Me Out",
+        "artist": "Franz Ferdinand",
+        "year": 2004
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "sharp-dressed-man",
+        "title": "Sharp Dressed Man",
+        "artist": "ZZ Top",
+        "year": 1983
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "killer-queen",
+        "title": "Killer Queen",
+        "artist": "Queen",
+        "year": 1974
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "hey-you",
+        "title": "Hey You",
+        "artist": "The Exies",
+        "year": 2004
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "stellar",
+        "title": "Stellar",
+        "artist": "Incubus",
+        "year": 2000
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "heart-full-of-black",
+        "title": "Heart Full of Black",
+        "artist": "Burning Brides",
+        "year": 2004
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "symphony-of-destruction",
+        "title": "Symphony of Destruction",
+        "artist": "Megadeth",
+        "year": 1992
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "ziggy-stardust",
+        "title": "Ziggy Stardust",
+        "artist": "David Bowie",
+        "year": 1972
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "fat-lip",
+        "title": "Fat Lip",
+        "artist": "Sum 41",
+        "year": 2001
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "cochise",
+        "title": "Cochise",
+        "artist": "Audioslave",
+        "year": 2002
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "take-it-off",
+        "title": "Take it Off",
+        "artist": "The Donnas",
+        "year": 2002
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "unsung",
+        "title": "Unsung",
+        "artist": "Helmet",
+        "year": 1992
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "spanish-castle-magic",
+        "title": "Spanish Castle Magic",
+        "artist": "Jimi Hendrix",
+        "year": 1967
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "higher-ground",
+        "title": "Higher Ground",
+        "artist": "Red Hot Chili Peppers",
+        "year": 1989
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "no-one-knows",
+        "title": "No One Knows",
+        "artist": "Queens of the Stone Age",
+        "year": 2002
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "ace-of-spades",
+        "title": "Ace of Spades",
+        "artist": "Mot\u00f6rhead",
+        "year": 1980
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "crossroads",
+        "title": "Crossroads",
+        "artist": "Cream",
+        "year": 1968
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "godzilla",
+        "title": "Godzilla",
+        "artist": "Blue \u00d6yster Cult",
+        "year": 1977
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "texas-flood",
+        "title": "Texas Flood",
+        "artist": "Stevie Ray Vaughan",
+        "year": 1983
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "frankenstein",
+        "title": "Frankenstein",
+        "artist": "The Edgar Winter Group",
+        "year": 1972
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "cowboys-from-hell",
+        "title": "Cowboys from Hell",
+        "artist": "Pantera",
+        "year": 1990
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "bark-at-the-moon",
+        "title": "Bark at the Moon",
+        "artist": "Ozzy Osbourne",
+        "year": 1983
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "all-of-this",
+        "title": "All of This",
+        "artist": "Shaimus",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "behind-the-mask",
+        "title": "Behind the Mask",
+        "artist": "Anarchy Club",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "the-breaking-wheel",
+        "title": "The Breaking Wheel",
+        "artist": "Artillery",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "callout",
+        "title": "Callout",
+        "artist": "The Acro-Brats",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "cavemen-rejoice",
+        "title": "Cavemen Rejoice",
+        "artist": "The Bags",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "cheat-on-the-church",
+        "title": "Cheat on the Church",
+        "artist": "Graveyard BBQ",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "decontrol",
+        "title": "Decontrol",
+        "artist": "Drist",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "eureka-ive-found-love",
+        "title": "Eureka, I've Found Love",
+        "artist": "The Upper Crust",
+        "year": 2000
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "even-rats",
+        "title": "Even Rats",
+        "artist": "The Slip",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "farewell-myth",
+        "title": "Farewell Myth",
+        "artist": "Made in Mexico",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "fire-it-up",
+        "title": "Fire it Up",
+        "artist": "Black Label Society",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "fly-on-the-wall",
+        "title": "Fly on the Wall",
+        "artist": "Din",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "get-ready-2-rokk",
+        "title": "Get Ready 2 Rokk",
+        "artist": "Freezepop",
+        "year": 2001
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "guitar-hero",
+        "title": "Guitar Hero",
+        "artist": "Monkey Steals the Peach",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "hey",
+        "title": "Hey",
+        "artist": "Honest Bob and the Factory-to-Dealer Incentives",
+        "year": 2004
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "sail-your-ship-by",
+        "title": "Sail Your Ship By",
+        "artist": "Count Zero",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "story-of-my-love",
+        "title": "Story of My Love",
+        "artist": "The Model Sons",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "graveyard-shift",
+        "title": "Graveyard Shift",
+        "artist": "Windtunnel Syndrome",
+        "year": 2005
+    }
+},
+{
+    "model": "scoreboard.song",
+    "fields": {
+        "slug": "trippolette",
+        "title": "Trippolette",
+        "artist": "Andrew Buch",
+        "year": 2005
+    }
+}
+]

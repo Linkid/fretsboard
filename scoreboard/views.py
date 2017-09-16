@@ -18,7 +18,7 @@ class Songs(generic.ListView):
     model = Song
     context_object_name = 'songs'
     template_name = 'scoreboard/songs.html'
-    paginate_by = 20
+    paginate_by = 15
 
     def get_queryset(self, *args, **kwargs):
         """
@@ -52,7 +52,7 @@ class Players(generic.ListView):
     model = Player
     context_object_name = 'players'
     template_name = 'scoreboard/players.html'
-    paginate_by = 20
+    paginate_by = 15
 
     def get_queryset(self, *args, **kwargs):
         """

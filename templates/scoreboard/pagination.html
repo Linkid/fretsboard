@@ -2,38 +2,41 @@
 {% trans "prev" as str_prev %}
 {% trans "next" as str_next %}
 
-<ul class="pagination">
-  <li>
-    {% if page_obj.has_previous %}
-      <a href="?page={{ page_obj.previous_page_number }}">
-        {{ str_prev }}
-      </a>
-    {% else %}
-      <span>{{ str_prev }}</span>
-    {% endif %}
-  </li>
 
-  {% for page_number in paginator.page_range %}
-    {% if page_number == page_obj.number %}
-      <li class="active">
-        <span>{{ page_number }}</span>
-      </li>
-    {% else %}
-      <li>
-        <a href="?page={{ page_number }}">
-          {{ page_number }}
+<div class="text-center">
+  <ul class="pagination">
+    <li>
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">
+          {{ str_prev }}
         </a>
-      </li>
-    {% endif %}
-  {% endfor %}
+      {% else %}
+        <span>{{ str_prev }}</span>
+      {% endif %}
+    </li>
 
-  <li>
-    {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}">
-        {{ str_next }}
-      </a>
-    {% else %}
-      <span>{{ str_next }}</span>
-    {% endif %}
-  </li>
-</ul>
+    {% for page_number in paginator.page_range %}
+      {% if page_number == page_obj.number %}
+        <li class="active">
+          <span>{{ page_number }}</span>
+        </li>
+      {% else %}
+        <li>
+          <a href="?page={{ page_number }}">
+            {{ page_number }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    <li>
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">
+          {{ str_next }}
+        </a>
+      {% else %}
+        <span>{{ str_next }}</span>
+      {% endif %}
+    </li>
+  </ul>
+</div>

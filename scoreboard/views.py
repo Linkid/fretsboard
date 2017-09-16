@@ -1,3 +1,7 @@
+import operator
+from functools import reduce
+
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.views import generic
@@ -16,6 +20,22 @@ class Songs(generic.ListView):
     template_name = 'scoreboard/songs.html'
     paginate_by = 20
 
+    def get_queryset(self, *args, **kwargs):
+        """
+        Display songs filtered by the search query
+        """
+        result = super().get_queryset(*args, **kwargs)
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(
+                reduce(operator.and_, (Q(title__icontains=q) for q in query_list)) |
+                reduce(operator.and_, (Q(artist__icontains=q) for q in query_list))
+            )
+
+        return result
+
 
 def song(request, song_id):
     """
@@ -33,6 +53,21 @@ class Players(generic.ListView):
     context_object_name = 'players'
     template_name = 'scoreboard/players.html'
     paginate_by = 20
+
+    def get_queryset(self, *args, **kwargs):
+        """
+        Display players filtered by the search query
+        """
+        result = super().get_queryset(*args, **kwargs)
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(
+                reduce(operator.and_, (Q(name__icontains=q) for q in query_list)),
+            )
+
+        return result
 
 
 def player(request, player_name):
@@ -82,3 +117,19 @@ def scoreboard(request):
     }
 
     return render(request, 'scoreboard/scoreboard.html', context)
+
+
+class Search(generic.RedirectView):
+    """
+    Search in models. Redirect to the scoreboard if no models found.
+    """
+    query_string = True
+
+    def get(self, request, *args, **kwargs):
+        obj = request.GET.get('obj', 'songs')
+        if obj in ['songs', 'players']:
+            self.pattern_name = obj
+        else:
+            self.pattern_name = 'scoreboard'
+
+        return super().get(request, *args, **kwargs)

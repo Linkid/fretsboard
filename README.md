@@ -5,7 +5,7 @@ Fretsboard
 
 Fretsboard is a web scoreboard for the rhythm game Frets On Fire.
 
-Instance (old): http://www.prison.net/worldcharts/charts/
+Instance (old): http://fretsonfire.sourceforge.net/charts/
 
 
 Status

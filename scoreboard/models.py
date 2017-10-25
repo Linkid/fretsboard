@@ -88,7 +88,7 @@ class Score(models.Model):
     def __str__(self, *args, **kwargs):
         msg = "%(song)s (%(difficulty)s): %(player)s - %(score)d (%(date)s)"
         dico = {
-            'song': self.song,
+            'song': self.song.title,
             'difficulty': self.difficulty,
             'player': self.player,
             'score': self.score,

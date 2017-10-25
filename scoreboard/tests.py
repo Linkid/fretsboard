@@ -159,7 +159,7 @@ class ScoreTestCase(TestCase):
             )
 
     def test_display_score(self):
-        expected_str_score = "song1 (easy): Player1 - 100 (%s)" % self.score.date
+        expected_str_score = "Song1 (easy): Player1 - 100 (%s)" % self.score.date
         self.assertEqual(str(self.score), expected_str_score)
 
     def test_stars_state(self):

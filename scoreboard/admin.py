@@ -8,6 +8,7 @@ from scoreboard.models import Song
 class SongAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'artist',)
+    search_fields = ['title', 'artist']
 
 
 admin.site.register(Player)

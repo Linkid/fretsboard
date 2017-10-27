@@ -19,8 +19,10 @@
           {% for song in songs|dictsortreversed:"score_set.count"|slice:"20" %}
           <li>
             <a href="{% url 'song' song.slug %}">{{ song.title }}</a>
-            ({% blocktrans with score_count=song.score_set.count score_count_p=song.score_set.count|pluralize trimmed %}
-              {{ score_count }} play{{ song.score_set.count_p }}
+            ({% blocktrans count score_count=song.score_set.count trimmed %}
+              {{ score_count }} play
+            {% plural %}
+              {{ score_count }} plays
             {% endblocktrans %})
           </li>
           {% empty %}
@@ -42,8 +44,10 @@
           {% for player in players|dictsortreversed:"get_total_score"|slice:"20" %}
           <li>
             <a href="{% url 'player' player.name %}">{{ player.name }}</a>
-            ({% blocktrans with total_score=player.get_total_score total_score_p=player.get_total_score|pluralize trimmed %}
-              {{ total_score }} point{{ total_score_p }}
+            ({% blocktrans count total_score=player.get_total_score trimmed %}
+              {{ total_score }} point
+            {% plural %}
+              {{ total_score }} points
             {% endblocktrans %})
           </li>
           {% empty %}
@@ -88,18 +92,24 @@
       <div class="panel-body">
         <ul>
           <li>
-            {% blocktrans with scores_count=scores.count scores_count_p=scores.count|pluralize %}
-              {{ scores_count }} game{{ scores_count_p }} played
+            {% blocktrans count scores_count=scores.count %}
+              {{ scores_count }} game played
+            {% plural %}
+              {{ scores_count }} games played
             {% endblocktrans %}
           </li>
           <li>
-            {% blocktrans with players_count=players.count players_count_p=players.count|pluralize %}
-              {{ players_count }} player{{ players_count_p }}
+            {% blocktrans count players_count=players.count %}
+              {{ players_count }} player
+            {% plural %}
+              {{ players_count }} players
             {% endblocktrans %}
           </li>
           <li>
-            {% blocktrans with songs_count=songs.count songs_count_p=songs.count|pluralize %}
-              {{ songs_count }} song{{ songs_count_p }} available
+            {% blocktrans count songs_count=songs.count %}
+              {{ songs_count }} song available
+            {% plural %}
+              {{ songs_count }} song available
             {% endblocktrans %}
           </li>
         </ul>
@@ -117,8 +127,12 @@
           <li>
             {% url 'song' score.song.slug as url_song %}
             {% url 'player' score.player.name as url_player %}
-            {% blocktrans with score_score=score.score score_score_p=score.score|pluralize song_title=score.song.title player_name=score.player.name %}
-              {{ score_score }} point{{ score_score_p }}
+            {% blocktrans count score_score=score.score with song_title=score.song.title player_name=score.player.name %}
+              {{ score_score }} point
+              on <a href="{{ url_song }}">{{ song_title }}</a>
+              by <a href="{{ url_player }}">{{ player_name }}</a>
+            {% plural %}
+              {{ score_score }} points
               on <a href="{{ url_song }}">{{ song_title }}</a>
               by <a href="{{ url_player }}">{{ player_name }}</a>
             {% endblocktrans %}

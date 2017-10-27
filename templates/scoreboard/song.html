@@ -28,8 +28,10 @@
 
 {% block content %}
 <p>
-  {% blocktrans with score_count=song.score_set.count score_count_p=song.score_set.count|pluralize %}
-    This song has been played {{ score_count }} time{{ score_count_p }}.
+  {% blocktrans count score_count=song.score_set.count %}
+    This song has been played {{ score_count }} time.
+  {% plural %}
+    This song has been played {{ score_count }} times.
   {% endblocktrans %}
 </p>
 

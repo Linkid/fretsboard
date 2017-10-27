@@ -11,9 +11,13 @@
   {% for song in songs|dictsort:"title" %}
   <li class="list-group-item">
     {% url 'song' song.slug as song_slug %}
-    {% blocktrans with title=song.title artist=song.artist %}
-      <a href="{{ song_slug }}"><strong>{{ title }}</strong> by {{ artist }}</a>
-    {% endblocktrans %}
+    {% if song.artist|length_is:"0" %}
+      <a href="{{ song_slug }}"><strong>{{ song.title }}</strong></a>
+    {% else %}
+      {% blocktrans with title=song.title artist=song.artist %}
+        <a href="{{ song_slug }}"><strong>{{ title }}</strong> by {{ artist }}</a>
+      {% endblocktrans %}
+    {% endif %}
   </li>
   {% empty %}
   <li class=list-group-item>{% trans "No song yet." %}</li>

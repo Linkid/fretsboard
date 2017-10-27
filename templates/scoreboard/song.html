@@ -4,16 +4,24 @@
 
 
 {% block title %}
-  {% blocktrans with title=song.title artist=song.artist %}
-    {{ title }} by {{ artist }}
-  {% endblocktrans %}
+  {% if song.artist|length_is:"0" %}
+    {{ song.title }}
+  {% else %}
+    {% blocktrans with title=song.title artist=song.artist %}
+      {{ title }} by {{ artist }}
+    {% endblocktrans %}
+  {% endif %}
 {% endblock %}
 
 {% block header %}
   <h1>
-    {% blocktrans with title=song.title artist=song.artist %}
-      <em>{{ title }}</em> (by <em>{{ artist }}</em>)
-    {% endblocktrans %}
+    {% if song.artist|length_is:"0" %}
+      <em>{{ song.title }}</em>
+    {% else %}
+      {% blocktrans with title=song.title artist=song.artist %}
+        <em>{{ title }}</em> (by <em>{{ artist }}</em>)
+      {% endblocktrans %}
+    {% endif %}
   </h1>
 {% endblock %}
 

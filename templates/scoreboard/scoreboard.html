@@ -92,21 +92,21 @@
       <div class="panel-body">
         <ul>
           <li>
-            {% blocktrans count scores_count=scores.count %}
+            {% blocktrans count scores_count=scores.count trimmed %}
               {{ scores_count }} game played
             {% plural %}
               {{ scores_count }} games played
             {% endblocktrans %}
           </li>
           <li>
-            {% blocktrans count players_count=players.count %}
+            {% blocktrans count players_count=players.count trimmed %}
               {{ players_count }} player
             {% plural %}
               {{ players_count }} players
             {% endblocktrans %}
           </li>
           <li>
-            {% blocktrans count songs_count=songs.count %}
+            {% blocktrans count songs_count=songs.count trimmed %}
               {{ songs_count }} song available
             {% plural %}
               {{ songs_count }} song available

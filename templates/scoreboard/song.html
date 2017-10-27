@@ -7,7 +7,7 @@
   {% if song.artist|length_is:"0" %}
     {{ song.title }}
   {% else %}
-    {% blocktrans with title=song.title artist=song.artist %}
+    {% blocktrans with title=song.title artist=song.artist trimmed %}
       {{ title }} by {{ artist }}
     {% endblocktrans %}
   {% endif %}
@@ -18,7 +18,7 @@
     {% if song.artist|length_is:"0" %}
       <em>{{ song.title }}</em>
     {% else %}
-      {% blocktrans with title=song.title artist=song.artist %}
+      {% blocktrans with title=song.title artist=song.artist trimmed %}
         <em>{{ title }}</em> (by <em>{{ artist }}</em>)
       {% endblocktrans %}
     {% endif %}
@@ -28,7 +28,7 @@
 
 {% block content %}
 <p>
-  {% blocktrans count score_count=song.score_set.count %}
+  {% blocktrans count score_count=song.score_set.count trimmed %}
     This song has been played {{ score_count }} time.
   {% plural %}
     This song has been played {{ score_count }} times.

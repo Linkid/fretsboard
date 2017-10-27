@@ -1,3 +1,6 @@
+import binascii
+
+import cerealizer
 from django.db import IntegrityError
 from django.test import TestCase
 from django.utils import timezone
@@ -168,3 +171,26 @@ class ScoreTestCase(TestCase):
 
         self.assertEqual(len(actual_stars_state), len(expected_stars_state))
         self.assertListEqual(actual_stars_state, expected_stars_state)
+
+
+class UploadTestCase(TestCase):
+    def test_upload(self):
+        score = {2: [(95908, 5, 'ball', 'ae023fbc6bf4a764fdba0423ea7bb801d80bde51')]}
+        score_str = binascii.hexlify(cerealizer.dumps(score))
+        # score_str = "63657265616c310a330a646963740a6c6973740a7475706c650a340a6939353930380a69350a75340a62616c6c7534300a61653032336662633662663461373634666462613034323365613762623830316438306264653531310a72310a69320a310a72320a72300a"
+
+        attrs = {
+            "songName": "Song title",
+            "songHash": "dadacafe",
+            "version": "4.0",
+            "scores": score_str,
+        }
+        response = self.client.get('/upload', attrs)
+
+        # check the response
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content, b"True")
+        # check objects
+        self.assertEqual(Score.objects.count(), 1)
+        self.assertEqual(Song.objects.count(), 1)
+        self.assertEqual(Player.objects.count(), 1)

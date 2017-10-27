@@ -1,9 +1,15 @@
+import binascii
+import hashlib
 import operator
 from functools import reduce
 
+import cerealizer
 from django.db.models import Q
+from django.db.utils import IntegrityError
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
+from django.utils import timezone
 from django.views import generic
 
 from scoreboard.models import Player
@@ -133,3 +139,76 @@ class Search(generic.RedirectView):
             self.pattern_name = 'scoreboard'
 
         return super().get(request, *args, **kwargs)
+
+
+def add_score(request):
+    """
+    Add a score for a player and a song
+
+    Returns a binary HttpResponse.
+    """
+    scores_to_insert = list()
+
+    # get GET params
+    song_title = request.GET.get('songName', None)
+    scores = request.GET.get('scores', None)
+    timestamp = request.GET.get("timestamp", timezone.now())
+
+    # check params
+    if song_title is None or scores is None:
+        return HttpResponse(False)
+
+    # decode scores
+    try:
+        scores_decoded = cerealizer.loads(binascii.unhexlify(scores))
+    except ValueError:
+        return HttpResponse(False)
+
+    # get scores items
+    for difficulty_id, scores_items in scores_decoded.items():
+        for score, stars, name, hash_score in scores_items:
+            # check the hash
+            hash_str = "%d%d%d%s" % (difficulty_id, score, stars, name)
+            hash_bytes = bytes(hash_str, 'utf-8')
+            hash_sha = hashlib.sha1(hash_bytes).hexdigest()
+            if hash_score != hash_sha:
+                continue
+
+            # check stars number
+            if stars < 0 or stars > Score.MAX_STARS:
+                continue
+
+            # check the difficulty
+            if difficulty_id < 0 or difficulty_id >= len(Score.DIFFICULTIES):
+                continue
+            difficulty = Score.DIFFICULTIES[difficulty_id][0]
+
+            # add scores to the list
+            scores_to_insert.append((difficulty, score, stars, name))
+
+    # find the song or create it
+    song, created_song = Song.objects.get_or_create(
+        title=song_title,
+    )
+
+    # for all scores
+    for difficulty, score, stars, name in scores_to_insert:
+        # find the player or create it
+        player, created_player = Player.objects.get_or_create(
+            name=name,
+        )
+
+        # write scores
+        try:
+            Score.objects.update_or_create(
+                song=song,
+                player=player,
+                difficulty=difficulty,
+                score=score,
+                stars=stars,
+                date=timestamp,
+            )
+        except IntegrityError:
+            return HttpResponse(False)
+
+    return HttpResponse(True)

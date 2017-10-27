@@ -12,4 +12,6 @@ urlpatterns = [
     # players
     url(r'^players/$', views.Players.as_view(), name='players'),
     url(r'^players/(?P<player_name>.+)$', views.player, name='player'),
+    # upload
+    url(r'^upload$', views.add_score, name='add_score'),
 ]

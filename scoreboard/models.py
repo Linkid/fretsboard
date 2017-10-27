@@ -6,8 +6,8 @@ from django.utils.translation import ugettext as _
 class Song(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     title = models.CharField(verbose_name=_("Title"), max_length=100)
-    artist = models.CharField(verbose_name=_("Artist"), max_length=100)
-    year = models.IntegerField(verbose_name=_("Year"))
+    artist = models.CharField(verbose_name=_("Artist"), max_length=100, blank=True)
+    year = models.IntegerField(verbose_name=_("Year"), blank=True, null=True)
 
     class Meta:
         ordering = ['slug']

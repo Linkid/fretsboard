@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% bootstrap_css %}
+    <link href="{% static "css/sticky-footer-navbar.css" %}" rel="stylesheet">
     {% block css %}{% endblock %}
 
     {% bootstrap_javascript jquery=1 %}
@@ -64,9 +65,34 @@
       </div>
     </nav>
 
-    <div class="container" role="main" style="margin-top:50px">
-      {% block header %}{% endblock %}
+    <div class="container" role="main">
+      <div class="page-header">{% block header %}{% endblock %}</div>
       {% block content %}{% endblock %}
     </div>
+
+    <!-- language -->
+    <footer class="footer">
+      <div class="container text-center">
+        <form class="navbar-form" action="{% url 'set_language' %}" method="post">
+          <div class="input-group">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <select class="form-control" name="language">
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                  {{ language.name_local }} ({{ language.code }})
+                </option>
+              {% endfor %}
+            </select>
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">{% trans 'Choose' %}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </footer>
   </body>
 </html>

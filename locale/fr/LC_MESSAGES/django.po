@@ -1,0 +1,266 @@
+# Fretsboard French Translations
+# Copyright (C) 2017
+# This file is distributed under the same license as the Fretsboard package.
+# François Magimel <magimel.francois@gmail.com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fretsboard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-29 12:35+0000\n"
+"PO-Revision-Date: 2017-10-29 13:36+0100\n"
+"Last-Translator: François Magimel <francois.magimel@alumni.enseeiht.fr>\n"
+"Language-Team: Fretsboard French Translators\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: scoreboard/models.py:8
+msgid "Title"
+msgstr "Titre"
+
+#: scoreboard/models.py:9
+msgid "Artist"
+msgstr "Artiste"
+
+#: scoreboard/models.py:10
+msgid "Year"
+msgstr "Année"
+
+#: scoreboard/models.py:24
+msgid "Name"
+msgstr "Nom"
+
+#: scoreboard/models.py:75
+msgid "Easy"
+msgstr "Facile"
+
+#: scoreboard/models.py:76
+msgid "Medium"
+msgstr "Moyen"
+
+#: scoreboard/models.py:77
+msgid "Amazing"
+msgstr "Splendide"
+
+#: scoreboard/models.py:81 templates/base.html:48
+msgid "Song"
+msgstr "Musique"
+
+#: scoreboard/models.py:82 templates/scoreboard/song.html:46
+msgid "Player"
+msgstr "Jou⋅eur⋅euse"
+
+#: scoreboard/models.py:83
+msgid "Difficulty"
+msgstr "Difficulté"
+
+#: scoreboard/models.py:84 templates/scoreboard/player.html:88
+#: templates/scoreboard/song.html:47
+msgid "Score"
+msgstr "Score"
+
+#: scoreboard/models.py:85 templates/scoreboard/player.html:90
+#: templates/scoreboard/song.html:48
+msgid "Stars"
+msgstr "Étoiles"
+
+#: scoreboard/models.py:86 templates/scoreboard/player.html:89
+msgid "Date"
+msgstr "Date"
+
+#: templates/base.html:37 templates/scoreboard/scoreboard.html:6
+#: templates/scoreboard/scoreboard.html:7
+msgid "Scoreboard"
+msgstr "Tableau des scores"
+
+#: templates/base.html:38 templates/base.html:51
+#: templates/scoreboard/players.html:5 templates/scoreboard/players.html:6
+msgid "Players"
+msgstr "Jou⋅eur⋅euse⋅s"
+
+#: templates/base.html:39 templates/scoreboard/songs.html:5
+#: templates/scoreboard/songs.html:6
+msgid "Songs"
+msgstr "Musiques"
+
+#: templates/base.html:55
+msgid "Search"
+msgstr "Rechercher"
+
+#: templates/base.html:91
+msgid "Choose"
+msgstr "Choisir"
+
+#: templates/scoreboard/pagination.html:2
+msgid "prev"
+msgstr "prec"
+
+#: templates/scoreboard/pagination.html:3
+msgid "next"
+msgstr "suiv"
+
+#: templates/scoreboard/player.html:6
+#, python-format
+msgid "Player %(player_name)s"
+msgstr "Jou⋅eur⋅euse %(player_name)s"
+
+#: templates/scoreboard/player.html:11 templates/scoreboard/scoreboard.html:73
+#: templates/scoreboard/song.html:59
+msgid "Gold"
+msgstr "Or"
+
+#: templates/scoreboard/player.html:12 templates/scoreboard/scoreboard.html:74
+#: templates/scoreboard/song.html:61
+msgid "Silver"
+msgstr "Argent"
+
+#: templates/scoreboard/player.html:13 templates/scoreboard/scoreboard.html:75
+#: templates/scoreboard/song.html:63
+msgid "Bronze"
+msgstr "Bronze"
+
+#: templates/scoreboard/player.html:19
+msgid "Total score"
+msgstr "Score total"
+
+#: templates/scoreboard/player.html:31
+msgid "Played games"
+msgstr "Parties jouées"
+
+#: templates/scoreboard/player.html:43
+msgid "Earned medals"
+msgstr "Médailles gagnées"
+
+#: templates/scoreboard/player.html:57
+msgid "Played songs"
+msgstr "Musiques jouées"
+
+#: templates/scoreboard/player.html:87
+msgid "Position"
+msgstr "Position"
+
+#: templates/scoreboard/player.html:130 templates/scoreboard/scoreboard.html:29
+#: templates/scoreboard/songs.html:23
+msgid "No song yet."
+msgstr "Aucune musique."
+
+#: templates/scoreboard/players.html:16 templates/scoreboard/scoreboard.html:54
+msgid "No player yet."
+msgstr "Aucun⋅e jou⋅eur⋅euse."
+
+#: templates/scoreboard/scoreboard.html:15
+msgid "Top songs"
+msgstr "Top des musiques"
+
+#: templates/scoreboard/scoreboard.html:22
+#, python-format
+msgid "%(score_count)s play"
+msgid_plural "%(score_count)s plays"
+msgstr[0] "%(score_count)s partie"
+msgstr[1] "%(score_count)s parties"
+
+#: templates/scoreboard/scoreboard.html:40
+msgid "Top players"
+msgstr "Top des jou⋅eur⋅euse⋅s"
+
+#: templates/scoreboard/scoreboard.html:47
+#, python-format
+msgid "%(total_score)s point"
+msgid_plural "%(total_score)s points"
+msgstr[0] "%(total_score)s point"
+msgstr[1] "%(total_score)s points"
+
+#: templates/scoreboard/scoreboard.html:65
+msgid "Top medals"
+msgstr "Top des médailles"
+
+#: templates/scoreboard/scoreboard.html:79
+msgid "No medal yet."
+msgstr "Aucune médaille."
+
+#: templates/scoreboard/scoreboard.html:90
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: templates/scoreboard/scoreboard.html:95
+#, python-format
+msgid "%(scores_count)s game played"
+msgid_plural "%(scores_count)s games played"
+msgstr[0] "%(scores_count)s partie jouée"
+msgstr[1] "%(scores_count)s parties jouées"
+
+#: templates/scoreboard/scoreboard.html:102
+#, python-format
+msgid "%(players_count)s player"
+msgid_plural "%(players_count)s players"
+msgstr[0] "%(players_count)s jou⋅eur⋅euse"
+msgstr[1] "%(players_count)s jou⋅eur⋅euse⋅s"
+
+#: templates/scoreboard/scoreboard.html:109
+#, python-format
+msgid "%(songs_count)s song available"
+msgid_plural "%(songs_count)s song available"
+msgstr[0] "%(songs_count)s musique disponible"
+msgstr[1] "%(songs_count)s musiques disponibles"
+
+#: templates/scoreboard/scoreboard.html:122
+msgid "Recent performances"
+msgstr "Résultats récents"
+
+#: templates/scoreboard/scoreboard.html:130
+#, python-format
+msgid ""
+"\n"
+"              %(score_score)s point\n"
+"              on <a href=\"%(url_song)s\">%(song_title)s</a>\n"
+"              by <a href=\"%(url_player)s\">%(player_name)s</a>\n"
+"            "
+msgid_plural ""
+"\n"
+"              %(score_score)s points\n"
+"              on <a href=\"%(url_song)s\">%(song_title)s</a>\n"
+"              by <a href=\"%(url_player)s\">%(player_name)s</a>\n"
+"            "
+msgstr[0] ""
+"\n"
+"              %(score_score)s point\n"
+"              à <a href=\"%(url_song)s\">%(song_title)s</a>\n"
+"              par <a href=\"%(url_player)s\">%(player_name)s</a>\n"
+"            "
+msgstr[1] ""
+"\n"
+"              %(score_score)s points\n"
+"              à <a href=\"%(url_song)s\">%(song_title)s</a>\n"
+"              par <a href=\"%(url_player)s\">%(player_name)s</a>\n"
+"            "
+
+#: templates/scoreboard/scoreboard.html:141
+msgid "No performance yet"
+msgstr "Aucun résultat"
+
+#: templates/scoreboard/song.html:10
+#, python-format
+msgid "%(title)s by %(artist)s"
+msgstr "%(title)s par %(artist)s"
+
+#: templates/scoreboard/song.html:21
+#, python-format
+msgid "<em>%(title)s</em> (by <em>%(artist)s</em>)"
+msgstr "<em>%(title)s</em> (par <em>%(artist)s</em>)"
+
+#: templates/scoreboard/song.html:31
+#, python-format
+msgid "This song has been played %(score_count)s time."
+msgid_plural "This song has been played %(score_count)s times."
+msgstr[0] "Cette musique a été jouée %(score_count)s fois."
+msgstr[1] "Cette musique a été jouée %(score_count)s fois."
+
+#: templates/scoreboard/songs.html:17
+#, python-format
+msgid "<a href=\"%(song_slug)s\"><strong>%(title)s</strong> by %(artist)s</a>"
+msgstr ""
+"<a href=\"%(song_slug)s\"><strong>%(title)s</strong> par %(artist)s</a>"

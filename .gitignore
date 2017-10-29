@@ -3,3 +3,4 @@
 *.sw?
 
 .tox
+.coverage

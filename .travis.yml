@@ -4,8 +4,12 @@ python:
 
 install:
     - pip install tox
+    - pip install coveralls
 
 script:
     - tox -e py36
     - tox -e flake8
     - tox -e coverage
+
+after_success:
+    - coveralls

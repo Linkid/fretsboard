@@ -23,6 +23,9 @@ class Song(models.Model):
 class Player(models.Model):
     name = models.CharField(verbose_name=_("Name"), max_length=100, unique=True)
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self, *args, **kwargs):
         return self.name
 

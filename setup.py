@@ -6,7 +6,7 @@ from setuptools import setup
 version = "1.0"
 
 setup(
-    name="Fretsboard",
+    name="fretsboard",
     version=version,
     author="François Magimel",
     author_email="francois.magimel@perdu.fr",

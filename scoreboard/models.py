@@ -8,6 +8,7 @@ class Song(models.Model):
     title = models.CharField(verbose_name=_("Title"), max_length=100)
     artist = models.CharField(verbose_name=_("Artist"), max_length=100, blank=True)
     year = models.IntegerField(verbose_name=_("Year"), blank=True, null=True)
+    notes = models.CharField(verbose_name=_("Notes (hash)"), max_length=128, blank=True)
 
     class Meta:
         ordering = ['slug']

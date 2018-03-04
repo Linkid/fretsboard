@@ -151,6 +151,7 @@ def add_score(request):
 
     # get GET params
     song_title = request.GET.get('songName', None)
+    song_hash = request.GET.get('songHash', None)
     scores = request.GET.get('scores', None)
     timestamp = request.GET.get("timestamp", timezone.now())
 
@@ -189,6 +190,7 @@ def add_score(request):
     # find the song or create it
     song, created_song = Song.objects.get_or_create(
         title=song_title,
+        notes=song_hash,
     )
 
     # for all scores

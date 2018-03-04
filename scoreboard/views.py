@@ -153,6 +153,7 @@ def add_score(request):
     song_title = request.GET.get('songName', None)
     song_hash = request.GET.get('songHash', None)
     scores = request.GET.get('scores', None)
+    version = request.GET.get('version', None)
     timestamp = request.GET.get("timestamp", timezone.now())
 
     # check params
@@ -209,6 +210,7 @@ def add_score(request):
                 score=score,
                 stars=stars,
                 date=timestamp,
+                version=version,
             )
         except IntegrityError:
             return HttpResponse(False)

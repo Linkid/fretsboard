@@ -85,6 +85,7 @@ class Score(models.Model):
     score = models.IntegerField(verbose_name=_("Score"))
     stars = models.IntegerField(verbose_name=_("Stars"))
     date = models.DateTimeField(verbose_name=_("Date"))
+    version = models.CharField(verbose_name=_("Version"), max_length=20, blank=True)
 
     class Meta:
         unique_together = ('song', 'player', 'difficulty')

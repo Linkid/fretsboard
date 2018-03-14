@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.utils import timezone
+from django.utils.html import escape
 from django.views import generic
 
 from scoreboard.models import Player
@@ -150,11 +151,11 @@ def add_score(request):
     # scores_to_insert = list()
 
     # get GET params
-    song_title = request.GET.get('songName', None)
-    song_hash = request.GET.get('songHash', None)
-    scores = request.GET.get('scores', None)
-    version = request.GET.get('version', None)
-    timestamp = request.GET.get("timestamp", timezone.now())
+    song_title = escape(request.GET.get('songName', None))
+    song_hash = escape(request.GET.get('songHash', None))
+    scores = escape(request.GET.get('scores', None))
+    version = escape(request.GET.get('version', None))
+    timestamp = escape(request.GET.get("timestamp", timezone.now()))
 
     # check params
     if song_title is None or scores is None:

@@ -87,6 +87,10 @@ msgstr "Date"
 msgid "Version"
 msgstr "Version"
 
+#: scoreboard/models.py:91
+msgid "Instrument"
+msgstr "Instrument"
+
 #: templates/base.html:37 templates/scoreboard/scoreboard.html:6
 #: templates/scoreboard/scoreboard.html:7
 msgid "Scoreboard"

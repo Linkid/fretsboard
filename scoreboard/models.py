@@ -23,6 +23,7 @@ class Song(models.Model):
 
 class Player(models.Model):
     name = models.CharField(verbose_name=_("Name"), max_length=100, unique=True)
+    remote_address = models.GenericIPAddressField(verbose_name=_("Remote address (IP)"), blank=True, null=True)
 
     class Meta:
         ordering = ['name']

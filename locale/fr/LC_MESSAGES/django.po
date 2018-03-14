@@ -38,6 +38,10 @@ msgstr "Notes (hash)"
 msgid "Name"
 msgstr "Nom"
 
+#: scoreboard/models.py:26
+msgid "Remote address (IP)"
+msgstr "Adresse distante (IP)"
+
 #: scoreboard/models.py:77
 msgid "Expert"
 msgstr "Expert"

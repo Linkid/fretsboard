@@ -156,6 +156,7 @@ def add_score(request):
     scores = escape(request.GET.get('scores', None))
     version = escape(request.GET.get('version', None))
     timestamp = escape(request.GET.get("timestamp", timezone.now()))
+    remote_addr = request.META.get("REMOTE_ADDR", None)
 
     # check params
     if song_title is None or scores is None:
@@ -199,6 +200,8 @@ def add_score(request):
             player, created_player = Player.objects.get_or_create(
                 name=name,
             )
+            player.remote_address = remote_addr
+            player.save()
 
             # write scores
             try:

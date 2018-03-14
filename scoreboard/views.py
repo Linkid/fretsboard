@@ -147,7 +147,7 @@ def add_score(request):
 
     Returns a binary HttpResponse.
     """
-    scores_to_insert = list()
+    # scores_to_insert = list()
 
     # get GET params
     song_title = request.GET.get('songName', None)
@@ -165,6 +165,12 @@ def add_score(request):
         scores_decoded = cerealizer.loads(binascii.unhexlify(scores))
     except ValueError:
         return HttpResponse(False)
+
+    # find the song or create it
+    song, created_song = Song.objects.get_or_create(
+        title=song_title,
+        notes=song_hash,
+    )
 
     # get scores items
     for difficulty_id, scores_items in scores_decoded.items():
@@ -186,33 +192,25 @@ def add_score(request):
             difficulty = Score.DIFFICULTIES[difficulty_id][0]
 
             # add scores to the list
-            scores_to_insert.append((difficulty, score, stars, name))
+            # scores_to_insert.append((difficulty, score, stars, name))
 
-    # find the song or create it
-    song, created_song = Song.objects.get_or_create(
-        title=song_title,
-        notes=song_hash,
-    )
-
-    # for all scores
-    for difficulty, score, stars, name in scores_to_insert:
-        # find the player or create it
-        player, created_player = Player.objects.get_or_create(
-            name=name,
-        )
-
-        # write scores
-        try:
-            Score.objects.update_or_create(
-                song=song,
-                player=player,
-                difficulty=difficulty,
-                score=score,
-                stars=stars,
-                date=timestamp,
-                version=version,
+            # find the player or create it
+            player, created_player = Player.objects.get_or_create(
+                name=name,
             )
-        except IntegrityError:
-            return HttpResponse(False)
+
+            # write scores
+            try:
+                Score.objects.update_or_create(
+                    song=song,
+                    player=player,
+                    difficulty=difficulty,
+                    score=score,
+                    stars=stars,
+                    date=timestamp,
+                    version=version,
+                )
+            except IntegrityError:
+                return HttpResponse(False)
 
     return HttpResponse(True)

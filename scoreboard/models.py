@@ -73,9 +73,9 @@ class Player(models.Model):
 
 class Score(models.Model):
     DIFFICULTIES = (
-        ("easy", _("Easy")),
-        ("medium", _("Medium")),
         ("amazing", _("Amazing")),
+        ("medium", _("Medium")),
+        ("easy", _("Easy")),
     )
     MAX_STARS = 5
 

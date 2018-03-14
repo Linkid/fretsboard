@@ -39,4 +39,4 @@ Other scoreboard were developped, in PHP:
 - fofcs (2008): https://sourceforge.net/projects/fofcs/
 - fretsweb-php (2009): https://sourceforge.net/projects/fretsweb/
 
-For more information, see the [Frets On Fire forum post](http://www.fretsonfire.net/forums/viewtopic.php?f=21&t=28485).
+For more information, see the [Frets On Fire forum post](https://www.fretsonfire.org/forums/viewtopic.php?f=21&t=60687).

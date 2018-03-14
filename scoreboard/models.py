@@ -73,7 +73,8 @@ class Player(models.Model):
 
 class Score(models.Model):
     DIFFICULTIES = (
-        ("amazing", _("Amazing")),
+        ("expert", _("Expert")),
+        ("hard", _("Hard")),
         ("medium", _("Medium")),
         ("easy", _("Easy")),
     )

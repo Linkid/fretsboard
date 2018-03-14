@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fretsboard\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-04 14:16+0000\n"
+"POT-Creation-Date: 2018-03-14 18:58+0000\n"
 "PO-Revision-Date: 2017-10-29 13:36+0100\n"
 "Last-Translator: François Magimel <francois.magimel@alumni.enseeiht.fr>\n"
 "Language-Team: Fretsboard French Translators\n"
@@ -38,19 +38,22 @@ msgstr "Notes (hash)"
 msgid "Name"
 msgstr "Nom"
 
-#: scoreboard/models.py:75
-msgid "Easy"
-msgstr "Facile"
+#: scoreboard/models.py:77
+msgid "Expert"
+msgstr "Expert"
 
-#: scoreboard/models.py:76
+#: scoreboard/models.py:78
+msgid "Hard"
+msgstr "Difficile"
+
+#: scoreboard/models.py:79
 msgid "Medium"
 msgstr "Moyen"
 
-#: scoreboard/models.py:77
-msgid "Amazing"
-msgstr "Splendide"
+#: scoreboard/models.py:80
+msgid "Easy"
+msgstr "Facile"
 
-#: scoreboard/models.py:81 templates/base.html:48
 msgid "Song"
 msgstr "Musique"
 

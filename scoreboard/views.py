@@ -50,7 +50,8 @@ def song(request, song_id):
     """
     Song scores
     """
-    song = get_object_or_404(Song, slug=song_id)
+    verified_songs = Song.objects.exclude(notes__exact='')
+    song = get_object_or_404(verified_songs, slug=song_id)
     return render(request, 'scoreboard/song.html', {'song': song})
 
 

@@ -58,6 +58,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'fretsboard.context_processors.piwik_code',
             ],
         },
     },
@@ -126,3 +127,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'fretsboard', 'static'),
 )
+
+# analytics
+PIWIK_URL = ''
+PIWIK_SITE_ID = ''

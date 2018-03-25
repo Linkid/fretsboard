@@ -33,7 +33,7 @@ class Player(models.Model):
 
     def get_total_score(self):
         """Sum all scores for the player"""
-        scores = self.score_set.all()
+        scores = self.score_set.exclude(song__notes__exact='')
         return sum(i.score for i in scores)
 
     def get_medals(self):
@@ -43,7 +43,7 @@ class Player(models.Model):
         bronze_medals = 0
 
         # get all scores for the player
-        my_scores = self.score_set.all()
+        my_scores = self.score_set.exclude(song__notes__exact='')
         for my_score in my_scores:
             # get all scores for the song and difficulty
             all_scores = Score.objects.filter(song=my_score.song, difficulty=my_score.difficulty)

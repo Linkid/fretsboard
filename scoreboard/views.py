@@ -90,6 +90,10 @@ def player(request, player_name):
     scores_player = player.score_set.order_by('song').only('song').distinct()
     for score_player in scores_player:
         song = score_player.song
+        # exclude not verified songs
+        if not song.notes:
+            continue
+
         positions[song] = dict()  # will contain { difficutly: { score: position } }
         # get all scores for the song
         scores_song = Score.objects.filter(song=song)

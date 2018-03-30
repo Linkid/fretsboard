@@ -32,8 +32,9 @@ class PlayerTestCase(TestCase):
         self.player4 = Player.objects.create(name="Player4")
         self.player5 = Player.objects.create(name="Player5")
         # songs
-        self.song1 = Song.objects.create(title="Song1", artist="Artist1", year=2017)
-        self.song2 = Song.objects.create(title="Song2", artist="Artist2", year=2017)
+        self.song1 = Song.objects.create(title="Song1", artist="Artist1", year=2017, verified=True)
+        self.song2 = Song.objects.create(title="Song2", artist="Artist2", year=2017, verified=True)
+        self.song3 = Song.objects.create(title="Song3", artist="Artist3", year=2017, verified=False)
         # scores
         Score.objects.create(
             song=self.song1,
@@ -48,6 +49,14 @@ class PlayerTestCase(TestCase):
             player=self.player1,
             difficulty="medium",
             score=200,
+            stars=2,
+            date=timezone.now()
+        )
+        Score.objects.create(
+            song=self.song3,
+            player=self.player1,
+            difficulty="medium",
+            score=800,
             stars=2,
             date=timezone.now()
         )

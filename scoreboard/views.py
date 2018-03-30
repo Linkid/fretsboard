@@ -39,9 +39,9 @@ class Songs(generic.ListView):
             result = result.filter(
                 reduce(operator.and_, (Q(title__icontains=q) for q in query_list)) |
                 reduce(operator.and_, (Q(artist__icontains=q) for q in query_list))
-            ).exclude(notes__exact='')
+            ).exclude(verified=False)
         else:
-            result = result.exclude(notes__exact='')
+            result = result.exclude(verified=False)
 
         return result
 
@@ -50,7 +50,7 @@ def song(request, song_id):
     """
     Song scores
     """
-    verified_songs = Song.objects.exclude(notes__exact='')
+    verified_songs = Song.objects.exclude(verified=False)
     song = get_object_or_404(verified_songs, slug=song_id)
     return render(request, 'scoreboard/song.html', {'song': song})
 
@@ -122,7 +122,7 @@ def scoreboard(request):
     """
     players = Player.objects.all()
     scores = Score.objects.all()
-    songs = Song.objects.all().exclude(notes__exact='')
+    songs = Song.objects.all().exclude(verified=False)
 
     context = {
         'players': players,

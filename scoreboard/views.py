@@ -1,5 +1,6 @@
 import binascii
 import hashlib
+import logging
 import operator
 from functools import reduce
 
@@ -16,6 +17,8 @@ from django.views import generic
 from scoreboard.models import Player
 from scoreboard.models import Score
 from scoreboard.models import Song
+
+logger = logging.getLogger(__name__)
 
 
 class Songs(generic.ListView):
@@ -176,6 +179,10 @@ def add_score(request):
     except ValueError:
         return HttpResponse(False)
 
+    # log the event
+    logger.info("New scores for the game version {version} at {remote_addr} for the song '{song_title}'",
+        version, remote_addr, song_title)
+
     # find the song or create it
     song, created_song = Song.objects.get_or_create(
         title=song_title,
@@ -188,6 +195,7 @@ def add_score(request):
         now_iso = datetime.now().isoformat()
         new_song_title = song_title + ' ' + now_iso
         song = Song.objects.create(title=new_song_title, notes=song_hash)
+        logger.info("Duplicate the song '{song_title}'", song_title)
 
     # get scores items
     for difficulty_id, scores_items in scores_decoded.items():
@@ -209,6 +217,8 @@ def add_score(request):
             difficulty = Score.DIFFICULTIES[difficulty_id][0]
 
             # add scores to the list
+            logger.info("Insert: score {score}, stars {stars}, difficulty {difficulty}, song '{name}'",
+                score, stars, difficulty, name)
             # scores_to_insert.append((difficulty, score, stars, name))
 
             # find the player or create it

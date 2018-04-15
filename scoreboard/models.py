@@ -82,8 +82,8 @@ class Score(models.Model):
     )
     MAX_STARS = 5
 
-    song = models.ForeignKey(Song, verbose_name=_("Song"))
-    player = models.ForeignKey(Player, verbose_name=_("Player"))
+    song = models.ForeignKey(Song, on_delete=models.CASCADE, verbose_name=_("Song"))
+    player = models.ForeignKey(Player, on_delete=models.CASCADE, verbose_name=_("Player"))
     difficulty = models.CharField(verbose_name=_("Difficulty"), choices=DIFFICULTIES, max_length=15)
     score = models.IntegerField(verbose_name=_("Score"))
     stars = models.IntegerField(verbose_name=_("Stars"))

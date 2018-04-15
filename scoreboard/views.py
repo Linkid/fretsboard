@@ -179,8 +179,15 @@ def add_score(request):
     # find the song or create it
     song, created_song = Song.objects.get_or_create(
         title=song_title,
-        notes=song_hash,
     )
+    if not song.notes:
+        song.notes = song_hash
+        song.save()
+    # multiple Songs with the same title
+    if song.notes != song_hash:
+        now_iso = datetime.now().isoformat()
+        new_song_title = song_title + ' ' + now_iso
+        song = Song.objects.create(title=new_song_title, notes=song_hash)
 
     # get scores items
     for difficulty_id, scores_items in scores_decoded.items():

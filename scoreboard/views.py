@@ -186,6 +186,7 @@ def add_score(request):
 
     # find the song or create it
     song, created_song = Song.objects.get_or_create(
+        defaults={'title': song_title},
         title__iexact=song_title,
     )
     if not song.notes:

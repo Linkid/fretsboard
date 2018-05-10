@@ -7,11 +7,15 @@ Fretsboard
 
 Fretsboard is a web scoreboard for the rhythm game Frets On Fire.
 
+Instance (new): https://fretsboard.herokuapp.com
+
 Instance (old): http://fretsonfire.sourceforge.net/charts/
 
 
 Status
 ======
+
+A small instance is available.
 
 This project is **still** in development.
 

@@ -70,9 +70,9 @@
           <li>
             <ul class="list-inline">
               <li><a href="{% url 'player' player.name %}">{{ player.name }}</a></li>
-              <li><img src="{% static 'img/gold.png' %}" alt="{% trans 'Gold' %}" /> {{ player.get_gold_medals }}</li>
-              <li><img src="{% static 'img/silver.png' %}" alt="{% trans 'Silver' %}" /> {{ player.get_silver_medals }}</li>
-              <li><img src="{% static 'img/bronze.png' %}" alt="{% trans 'Bronze' %}" /> {{ player.get_bronze_medals }}</li>
+              <li><img height="12" width="12" src="{% static 'img/gold.png' %}" alt="{% trans 'Gold' %}" /> {{ player.get_gold_medals }}</li>
+              <li><img height="12" width="12" src="{% static 'img/silver.png' %}" alt="{% trans 'Silver' %}" /> {{ player.get_silver_medals }}</li>
+              <li><img height="12" width="12" src="{% static 'img/bronze.png' %}" alt="{% trans 'Bronze' %}" /> {{ player.get_bronze_medals }}</li>
             </ul>
           </li>
           {% empty %}

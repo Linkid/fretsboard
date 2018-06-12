@@ -11,6 +11,8 @@ Instance (new): https://fretsboard.herokuapp.com
 
 Instance (old): http://fretsonfire.sourceforge.net/charts/
 
+Get in touch (via matrix): [#fretsboard:matrix.org](https://riot.im/app/#/room/#fretsboard:matrix.org)
+
 
 Status
 ======

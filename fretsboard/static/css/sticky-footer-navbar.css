@@ -25,4 +25,6 @@ body > .container {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

@@ -1,8 +1,20 @@
 Release notes
 =============
 
-1.1 (unreleased)
+1.1 (2018-06-16)
 ----------------
+
+- Dependencies: migrate to Django 2.0
+- Dependencies: use the Cerealizer binary
+- Doc: add a screenshot of the scoreboard
+- Doc: add release notes
+- Logs: add some logs
+- Theme: add some links to the footer
+- Theme: reduce the size of medals
+- Translations: update languages.
+- Upload: duplicate songs if needed
+- Upload: filter songs by case-insensitive title
+
 
 1.0 (2018-04-01)
 ----------------

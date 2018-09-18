@@ -86,7 +86,7 @@ class PlayerTestCase(TestCase):
         )
 
     def test_display_name(self):
-        self.assertEquals(str(self.player1), self.player1.name)
+        self.assertEqual(str(self.player1), self.player1.name)
 
     def test_get_total_score(self):
         total = 100 + 200

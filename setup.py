@@ -18,7 +18,7 @@ setup(
     platforms='any',
     zip_safe=True,
     install_requires=[
-        "django >= 1.11",
+        "django >= 2.0",
         "django-bootstrap3 >= 9.0",
         "cerealizer == 0.8.2",
     ],

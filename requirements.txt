@@ -1,4 +1,3 @@
 Django>=2.0,<2.1
 django-bootstrap3>=9,<10
-# https://bitbucket.org/jibalamy/cerealizer/get/ffbb928.tar.gz  # cerealizer 0.8.1
-Cerealizer==0.8.1 --no-binary Cerealizer
+Cerealizer==0.8.2

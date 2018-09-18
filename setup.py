@@ -20,9 +20,7 @@ setup(
     install_requires=[
         "django >= 1.11",
         "django-bootstrap3 >= 9.0",
-    ],
-    dependency_links=[
-        "https://bitbucket.org/jibalamy/cerealizer/get/ffbb928.tar.gz",  # cerealizer 0.8.1
+        "cerealizer == 0.8.2",
     ],
     classifiers=[
         "Development Status :: 4 - Beta",

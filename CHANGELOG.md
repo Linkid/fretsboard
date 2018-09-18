@@ -4,6 +4,9 @@ Release notes
 1.2 (unreleased)
 ----------------
 
+- Dependencies: update Cerealizer to 0.8.2
+
+
 1.1 (2018-06-16)
 ----------------
 

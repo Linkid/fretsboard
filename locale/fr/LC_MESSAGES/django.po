@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fretsboard\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-12 20:40+0000\n"
-"PO-Revision-Date: 2018-06-12 22:47+0200\n"
+"PO-Revision-Date: 2018-10-21 22:47+0200\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: Fretsboard French Translators\n"
 "Language: fr\n"
@@ -128,8 +128,8 @@ msgid "Choose"
 msgstr "Choisir"
 
 #: templates/base.html:123
-msgid "Version 1.1"
-msgstr "Version 1.1"
+msgid "Version 1.2"
+msgstr "Version 1.2"
 
 #: templates/base.html:126
 msgid "Changelog"

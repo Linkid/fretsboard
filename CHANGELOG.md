@@ -5,6 +5,7 @@ Release notes
 ----------------
 
 - Dependencies: update Cerealizer to 0.8.2
+- Dependencies: update Django to 2.1
 
 
 1.1 (2018-06-16)

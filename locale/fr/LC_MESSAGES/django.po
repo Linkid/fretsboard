@@ -122,7 +122,7 @@ msgstr "Erreur serveur"
 
 #: templates/500.html:9
 msgid "Something has gone wrong. Please, try again later."
-msgstr "Quelquechose s'est mal passé. Veuillez essayer à nouveau plus tard."
+msgstr "Quelque chose s'est mal passé. Veuillez essayer à nouveau plus tard."
 
 #: templates/base.html:38 templates/scoreboard/scoreboard.html:6
 #: templates/scoreboard/scoreboard.html:7

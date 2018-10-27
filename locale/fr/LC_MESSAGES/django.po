@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fretsboard\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-12 20:40+0000\n"
-"PO-Revision-Date: 2018-10-21 22:47+0200\n"
+"PO-Revision-Date: 2018-10-25 22:20+0200\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: Fretsboard French Translators\n"
 "Language: fr\n"
@@ -95,6 +95,34 @@ msgstr "Version"
 #: scoreboard/models.py:92
 msgid "Instrument"
 msgstr "Instrument"
+
+#: templates/400.html:5 templates/400.html:6
+msgid "Bad request error"
+msgstr "Erreur de requête"
+
+#: templates/400.html:9 templates/404.html:9
+msgid "The page you are looking for doesn't exist."
+msgstr "La page que vous recherchez n'existe pas."
+
+#: templates/403.html:5 templates/403.html:6
+msgid "Forbidden error"
+msgstr "Accès refusé"
+
+#: templates/403.html:9
+msgid "You don't have the permission to access this page."
+msgstr "Vous n'êtes pas autorisé à accéder à cette page."
+
+#: templates/404.html:5 templates/404.html:6
+msgid "Page not found"
+msgstr "Page non trouvée"
+
+#: templates/500.html:5 templates/500.html:6
+msgid "Internal server error"
+msgstr "Erreur serveur"
+
+#: templates/500.html:9
+msgid "Something has gone wrong. Please, try again later."
+msgstr "Quelque chose s'est mal passé. Veuillez essayer à nouveau plus tard."
 
 #: templates/base.html:38 templates/scoreboard/scoreboard.html:6
 #: templates/scoreboard/scoreboard.html:7

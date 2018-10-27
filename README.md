@@ -34,6 +34,7 @@ On a virtualenv:
 git clone git@github.com:Linkid/fretsboard.git
 cd fretsboard
 pip install -r requirements.txt
+./manage.py makemigrations scoreboard
 ./manage.py migrate
 ./manage.py runserver
 ```

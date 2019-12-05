@@ -156,8 +156,8 @@ msgid "Choose"
 msgstr "Choisir"
 
 #: templates/base.html:123
-msgid "Version 1.2"
-msgstr "Version 1.2"
+msgid "Version 1.3"
+msgstr "Version 1.3"
 
 #: templates/base.html:126
 msgid "Changelog"

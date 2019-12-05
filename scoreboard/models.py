@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 
 class Song(models.Model):

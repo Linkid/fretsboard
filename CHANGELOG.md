@@ -5,7 +5,7 @@ Release notes
 ----------------
 
 - Dependencies: update Cerealizer to 0.8.3
-- Dependencies: update Django to 2.2
+- Dependencies: update Django to 3.0
 - Dependencies: update Python to 3.7
 - Templates: add error pages (400, 403, 404 and 500)
 

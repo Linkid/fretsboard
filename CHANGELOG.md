@@ -4,6 +4,9 @@ Release notes
 1.3 (unreleased)
 ----------------
 
+- Dependencies: update Django to 2.2
+
+
 1.2 (2018-10-21)
 ----------------
 

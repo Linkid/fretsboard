@@ -4,6 +4,7 @@ Release notes
 1.3 (unreleased)
 ----------------
 
+- Dependencies: update Cerealizer to 0.8.3
 - Dependencies: update Django to 2.2
 
 

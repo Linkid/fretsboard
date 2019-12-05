@@ -20,7 +20,7 @@ setup(
     install_requires=[
         "django >= 2.2",
         "django-bootstrap3 >= 9.0",
-        "cerealizer == 0.8.2",
+        "cerealizer == 0.8.3",
     ],
     classifiers=[
         "Development Status :: 4 - Beta",

@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
+import os
+
 from setuptools import setup
 
+
+with open(os.path.join(os.path.dirname(__file__), "README.md"), 'rb') as readme_file:
+    readme = readme_file.read().decode('utf-8')
 
 version = "1.3"
 
@@ -11,7 +16,8 @@ setup(
     author="François Magimel",
     author_email="francois.magimel@perdu.fr",
     description="Fretsboard is a web scoreboard for the rhythm game Frets On Fire and similar",
-    long_description=open("README.md", 'rb').read().decode('utf-8'),
+    long_description=readme,
+    long_description_content_type="text/markdown",
     license="GPL License",
     url="https://github.com/Linkid/fretsboard",
     packages=['fretsboard', 'scoreboard'],

@@ -5,6 +5,8 @@ Release notes
 ----------------
 
 - Dependencies: update django-bootstrap3 to 12.0
+- Dependencies: update Python to 3.8
+- Dependencies: specify the minimal required Python version
 
 
 1.3 (2019-12-05)

@@ -23,6 +23,7 @@ setup(
     packages=['fretsboard', 'scoreboard'],
     platforms='any',
     zip_safe=True,
+    python_requires=">=3.6",
     install_requires=[
         "django >= 3.0",
         "django-bootstrap3 >= 9.0",
@@ -39,7 +40,9 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Topic :: Games/Entertainment",
         "Topic :: Internet",
         "Topic :: Multimedia",

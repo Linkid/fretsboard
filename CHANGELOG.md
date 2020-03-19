@@ -4,6 +4,9 @@ Release notes
 1.4 (unreleased)
 ----------------
 
+- Dependencies: update django-bootstrap3 to 12.0
+
+
 1.3 (2019-12-05)
 ----------------
 

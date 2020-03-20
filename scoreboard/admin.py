@@ -7,7 +7,8 @@ from scoreboard.models import Song
 
 class SongAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    list_display = ('title', 'artist',)
+    list_display = ('title', 'artist', 'verified')
+    list_filter = ('verified',)
     search_fields = ['title', 'artist']
 
 

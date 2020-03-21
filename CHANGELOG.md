@@ -9,6 +9,7 @@ Release notes
 - Dependencies: update Python to 3.8
 - Dependencies: specify the minimal required Python version
 - Translations: use lazy translations in models to get translated text in templates
+- Template: get translated difficulty in the song template
 
 
 1.3 (2019-12-05)

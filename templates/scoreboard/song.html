@@ -38,7 +38,8 @@
 {% regroup song.score_set.all|dictsort:"difficulty" by difficulty as difficulties_scores %}
 
 {% for difficulty, scores in difficulties_scores %}
-<h2>{{ difficulty }}</h2>
+<!-- {{ difficulty }} -->
+<h2>{{ scores.0.get_difficulty_display }}</h2>
 <table class="table table-striped">
   <thead>
     <tr>

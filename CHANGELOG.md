@@ -8,8 +8,10 @@ Release notes
 - Dependencies: update django-bootstrap3 to 12.0
 - Dependencies: update Python to 3.8
 - Dependencies: specify the minimal required Python version
+- Templates: get translated difficulty in the song template
+- Tests: add python 3.7 and 3.8 compatibility
 - Translations: use lazy translations in models to get translated text in templates
-- Template: get translated difficulty in the song template
+
 
 
 1.3 (2019-12-05)

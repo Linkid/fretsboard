@@ -8,7 +8,7 @@ from setuptools import setup
 with open(os.path.join(os.path.dirname(__file__), "README.md"), 'rb') as readme_file:
     readme = readme_file.read().decode('utf-8')
 
-version = "1.3"
+version = "1.4"
 
 setup(
     name="fretsboard",

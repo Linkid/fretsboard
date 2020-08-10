@@ -1,7 +1,7 @@
 Release notes
 =============
 
-1.4 (unreleased)
+1.4 (2020-08-10)
 ----------------
 
 - Admin: display and filter verified songs

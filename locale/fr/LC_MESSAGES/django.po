@@ -1,5 +1,5 @@
 # Fretsboard French Translations
-# Copyright (C) 2017
+# Copyright (C) 2017-2020
 # This file is distributed under the same license as the Fretsboard package.
 # François Magimel <magimel.francois@gmail.com>, 2017.
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fretsboard\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-12 20:40+0000\n"
-"PO-Revision-Date: 2018-10-25 22:20+0200\n"
+"PO-Revision-Date: 2020-08-10 09:52+0000\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: Fretsboard French Translators\n"
 "Language: fr\n"
@@ -66,7 +66,7 @@ msgstr "Facile"
 msgid "Song"
 msgstr "Musique"
 
-#: scoreboard/models.py:86 templates/scoreboard/song.html:46
+#: scoreboard/models.py:86 templates/scoreboard/song.html:47
 msgid "Player"
 msgstr "Jou⋅eur⋅euse"
 
@@ -75,12 +75,12 @@ msgid "Difficulty"
 msgstr "Difficulté"
 
 #: scoreboard/models.py:88 templates/scoreboard/player.html:88
-#: templates/scoreboard/song.html:47
+#: templates/scoreboard/song.html:48
 msgid "Score"
 msgstr "Score"
 
 #: scoreboard/models.py:89 templates/scoreboard/player.html:90
-#: templates/scoreboard/song.html:48
+#: templates/scoreboard/song.html:49
 msgid "Stars"
 msgstr "Étoiles"
 
@@ -156,8 +156,8 @@ msgid "Choose"
 msgstr "Choisir"
 
 #: templates/base.html:123
-msgid "Version 1.3"
-msgstr "Version 1.3"
+msgid "Version 1.4"
+msgstr "Version 1.4"
 
 #: templates/base.html:126
 msgid "Changelog"
@@ -181,17 +181,17 @@ msgid "Player %(player_name)s"
 msgstr "Jou⋅eur⋅euse %(player_name)s"
 
 #: templates/scoreboard/player.html:11 templates/scoreboard/scoreboard.html:73
-#: templates/scoreboard/song.html:59
+#: templates/scoreboard/song.html:60
 msgid "Gold"
 msgstr "Or"
 
 #: templates/scoreboard/player.html:12 templates/scoreboard/scoreboard.html:74
-#: templates/scoreboard/song.html:61
+#: templates/scoreboard/song.html:62
 msgid "Silver"
 msgstr "Argent"
 
 #: templates/scoreboard/player.html:13 templates/scoreboard/scoreboard.html:75
-#: templates/scoreboard/song.html:63
+#: templates/scoreboard/song.html:64
 msgid "Bronze"
 msgstr "Bronze"
 

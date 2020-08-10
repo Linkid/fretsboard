@@ -25,7 +25,7 @@ setup(
     zip_safe=True,
     python_requires=">=3.6",
     install_requires=[
-        "django >= 3.0",
+        "django >= 3.1",
         "django-bootstrap3 >= 9.0",
         "cerealizer == 0.8.3",
     ],
@@ -33,7 +33,7 @@ setup(
         "Development Status :: 4 - Beta",
         "Environment :: Web Environment",
         "Framework :: Django",
-        "Framework :: Django :: 3.0",
+        "Framework :: Django :: 3.1",
         "Intended Audience :: End Users/Desktop",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Natural Language :: English",

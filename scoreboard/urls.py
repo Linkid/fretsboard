@@ -1,17 +1,17 @@
-from django.conf.urls import url
+from django.conf.urls import re_path
 
 from scoreboard import views
 
 
 urlpatterns = [
-    url(r'^$', views.scoreboard, name='scoreboard'),
-    url(r'^search$', views.Search.as_view(), name='search'),
+    re_path(r'^$', views.scoreboard, name='scoreboard'),
+    re_path(r'^search$', views.Search.as_view(), name='search'),
     # songs
-    url(r'^songs/$', views.Songs.as_view(), name='songs'),
-    url(r'^songs/(?P<song_id>.+)/$', views.song, name='song'),
+    re_path(r'^songs/$', views.Songs.as_view(), name='songs'),
+    re_path(r'^songs/(?P<song_id>.+)/$', views.song, name='song'),
     # players
-    url(r'^players/$', views.Players.as_view(), name='players'),
-    url(r'^players/(?P<player_name>.+)$', views.player, name='player'),
+    re_path(r'^players/$', views.Players.as_view(), name='players'),
+    re_path(r'^players/(?P<player_name>.+)$', views.player, name='player'),
     # upload
-    url(r'^upload$', views.add_score, name='add_score'),
+    re_path(r'^upload$', views.add_score, name='add_score'),
 ]

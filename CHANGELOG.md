@@ -5,6 +5,7 @@ Release notes
 ----------------
 
 - Admin: display and filter verified songs
+- Dependencies: update Django to 3.1
 - Dependencies: update django-bootstrap3 to 12.0
 - Dependencies: update Python to 3.8
 - Dependencies: specify the minimal required Python version

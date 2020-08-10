@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fretsboard\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-12 20:40+0000\n"
-"PO-Revision-Date: 2020-08-10 09:52+0000\n"
+"PO-Revision-Date: 2020-08-10 10:32+0000\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: Fretsboard French Translators\n"
 "Language: fr\n"
@@ -155,15 +155,15 @@ msgstr "Chat / Matrix"
 msgid "Choose"
 msgstr "Choisir"
 
-#: templates/base.html:123
-msgid "Version 1.4"
-msgstr "Version 1.4"
+#: templates/base.html:124
+msgid "Version 1.5-dev"
+msgstr "Version 1.5-dev"
 
-#: templates/base.html:126
+#: templates/base.html:127
 msgid "Changelog"
 msgstr "Journal des modifications"
 
-#: templates/base.html:129
+#: templates/base.html:131
 msgid "Documentation"
 msgstr "Documentation"
 

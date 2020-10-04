@@ -11,7 +11,7 @@ Instance (new): https://fretsboard.herokuapp.com
 
 Instance (old): http://fretsonfire.sourceforge.net/charts/
 
-Get in touch (via matrix): [#fretsboard:matrix.org](https://riot.im/app/#/room/#fretsboard:matrix.org)
+Get in touch (via matrix): [#fretsboard:matrix.org](https://app.element.io/#/room/#fretsboard:matrix.org)
 
 
 ![Screenshot scoreboard](https://raw.githubusercontent.com/Linkid/fretsboard/master/docs/source/_static/screenhsot_scoreboard.png "Screenshot scoreboard")

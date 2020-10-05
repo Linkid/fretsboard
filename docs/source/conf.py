@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.abspath('../../scoreboard'))
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'm2r',
+    'm2r2',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

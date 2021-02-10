@@ -4,6 +4,9 @@ Release notes
 1.5 (unreleased)
 ----------------
 
+- build: add Python 3.9 compatibility
+
+
 1.4 (2020-08-10)
 ----------------
 
@@ -15,7 +18,6 @@ Release notes
 - Templates: get translated difficulty in the song template
 - Tests: add python 3.7 and 3.8 compatibility
 - Translations: use lazy translations in models to get translated text in templates
-
 
 
 1.3 (2019-12-05)

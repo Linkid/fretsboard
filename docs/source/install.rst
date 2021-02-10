@@ -4,7 +4,7 @@ Installation
 Compatibilities
 ---------------
 
-- Python: supports python 3.6, 3.7 and 3.8
+- Python: supports python 3.6, 3.7, 3.8 and 3.9
 - Django: supports 3.0
 - Bootstrap: supports the version 3
 

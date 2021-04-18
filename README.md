@@ -1,7 +1,7 @@
 Fretsboard
 ==========
 
-[![Build Status](https://travis-ci.org/Linkid/fretsboard.svg?branch=master)](https://travis-ci.org/Linkid/fretsboard)
+[![Build Status](https://travis-ci.com/Linkid/fretsboard.svg?branch=master)](https://travis-ci.com/Linkid/fretsboard)
 [![Coverage Status](https://coveralls.io/repos/github/Linkid/fretsboard/badge.svg?branch=master)](https://coveralls.io/github/Linkid/fretsboard?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/fretsboard/badge/?version=latest)](https://fretsboard.readthedocs.io/en/latest/?badge=latest)
 

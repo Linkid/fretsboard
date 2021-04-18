@@ -6,6 +6,7 @@ Release notes
 
 - build: add Python 3.9 compatibility
 - dependencies: update Django to 3.2
+- doc: update the Travis link
 
 
 1.4 (2020-08-10)

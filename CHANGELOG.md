@@ -1,7 +1,7 @@
 Release notes
 =============
 
-1.5 (unreleased)
+1.5 (2021-04-29)
 ----------------
 
 - build: add Python 3.9 compatibility

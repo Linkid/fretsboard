@@ -1,5 +1,5 @@
 # Fretsboard French Translations
-# Copyright (C) 2017-2020
+# Copyright (C) 2017-2021
 # This file is distributed under the same license as the Fretsboard package.
 # François Magimel <magimel.francois@gmail.com>, 2017.
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fretsboard\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-12 20:40+0000\n"
-"PO-Revision-Date: 2020-08-10 10:32+0000\n"
+"PO-Revision-Date: 2021-04-29 19:30+0000\n"
 "Last-Translator: François Magimel <magimel.francois@gmail.com>\n"
 "Language-Team: Fretsboard French Translators\n"
 "Language: fr\n"
@@ -155,15 +155,15 @@ msgstr "Chat / Matrix"
 msgid "Choose"
 msgstr "Choisir"
 
-#: templates/base.html:124
-msgid "Version 1.5-dev"
-msgstr "Version 1.5-dev"
+#: templates/base.html:123
+msgid "Version 1.5"
+msgstr "Version 1.5"
 
-#: templates/base.html:127
+#: templates/base.html:126
 msgid "Changelog"
 msgstr "Journal des modifications"
 
-#: templates/base.html:131
+#: templates/base.html:129
 msgid "Documentation"
 msgstr "Documentation"
 

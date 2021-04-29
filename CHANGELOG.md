@@ -5,6 +5,7 @@ Release notes
 ----------------
 
 - build: add Python 3.9 compatibility
+- ci: use Github Actions to run tests
 - dependencies: update Django to 3.2
 - doc: update the Travis link
 
